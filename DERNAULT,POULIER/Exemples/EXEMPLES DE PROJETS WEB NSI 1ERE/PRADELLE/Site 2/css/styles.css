@@ -1,0 +1,364 @@
+/* Importation d'une police */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap);
+
+/* Mettre tous les textes avec cette police */
+* {
+  font-family: "Montserrat";
+  font-weight: 100;
+}
+
+/* Descendre en glissant sur la page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Suppression de la marge par défaut de la page */
+body {
+  margin: 0 auto;
+}
+
+/* Tête de la page */
+header.header {
+  display: flex;
+  align-items: center;
+}
+
+/* Personnalisation de la barre de menu */
+header.header img {
+  width: 150px;
+}
+
+/* Image de fond de la tête de page */
+.top-page {
+  background: url("../images/bg1.jpg");
+  background-size: cover;
+  height: 520px;
+  padding: 10px;
+}
+
+/* Insertion du grand titre */
+.big-title {
+  padding: 20px 50px;
+  color: rgb(255, 255, 255);
+  font-size: 70px;
+}
+
+/* Création du scroll */
+.scroll-down {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  position: absolute;
+  padding: 20px 50px;
+  bottom: 225px;
+}
+
+/* Personnalisation du menu */
+nav.nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 1100px;
+  margin-left: 50px;
+  font-size: 17px;
+}
+
+/* Personnalisation des éléments de la barre de menu */
+nav.nav li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Création de la boite Catégories de métiers */
+.categories {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 120px;
+  padding-bottom: 30px;
+}
+
+/* Placement des icones */
+.categories-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Personnalisation des icones */
+.delivery-icon {
+  font-size: 40px;
+  color: rgb(0, 0, 103);
+}
+
+/* Texte : "catégories de métiers" */
+.texte-categories {
+  font-weight: 600;
+  width: 270px;
+  text-align: center;
+  text-decoration-line: none;
+  color: black;
+  padding-top: 15px;
+}
+
+/* Titre : Les meilleurs logiciels */
+.section-titre {
+  font-size: 50px;
+  font-weight: 100;
+  position: relative;
+}
+
+/* Petite barre sur le titre */
+.section-titre::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(0, 0, 103);
+  width: 50px;
+  height: 7px;
+  bottom: 0;
+}
+
+/* Création des boites de métiers*/
+.metiers {
+  margin: 70px;
+  padding-top: 5px;
+  padding-bottom: 95px;
+}
+
+.meilleurs-metier {
+  min-height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+
+/* Création d'une boite pour chaque logiciel */
+.metier-box {
+  background-color: rgb(241, 241, 241);
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-width: 300px;
+  height: 500px;
+  flex: 1;
+}
+
+/* Association d'un nom à l'image */
+.dev1 {
+  background-image: url(../images/Développeur\ logiciel.jpg);
+}
+.dev2 {
+  background-image: url(../images/Ingénieur\ de\ développement.jpg);
+}
+.dev3 {
+  background-image: url(../images/Développeur\ d’applications\ mobiles.jpeg);
+}
+.res1 {
+  background-image: url(../images/Analyste\ de\ sécurité\ informatique.jpg);
+}
+.res2 {
+  background-image: url(../images/Ingénieur\ réseau.jpg);
+}
+.res3 {
+  background-image: url(../images/Spécialiste\ en\ cybersécurité.jpg);
+}
+.don1 {
+  background-image: url(../images/Scientifique\ des\ données.jpg);
+}
+.don2 {
+  background-image: url(../images/Ingénieur\ en\ intelligence\ artificielle.jpeg);
+}
+.don3 {
+  background-image: url(../images/Architecte\ de\ données.png);
+}
+.ges1 {
+  background-image: url(../images/Chef\ de\ projet\ informatique.jpg);
+}
+.ges2 {
+  background-image: url(../images/Gestionnaire\ de\ projets\ en\ informatique.jpg);
+}
+.ges3 {
+  background-image: url(../images/analyste_affaires__w1200.jpg);
+}
+
+/* Les éléments sous la photo */
+.metier-detail {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #ffffffdf;
+}
+
+/* Le nom du logiciel */
+.metier-nom {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 3px;
+  padding-left: 10px;
+}
+
+/* Personnalisation des boutons */
+.bouton {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-left: 20px;
+  background-color: rgb(0, 0, 103);
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.voirplus {
+  text-align: center;
+}
+
+.textvoirplus {
+  font-size: 20px;
+  padding: 10px 75px;
+  background-color: rgba(0, 0, 121, 0.855);
+  color: #ffffff;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: 200ms;
+  text-align: center;
+}
+
+/* Animation des bouton */
+button:hover {
+  background-color: rgb(0, 0, 167);
+}
+
+/* Création du bas de page */
+.down-page {
+  background-color: black;
+  background-size: cover;
+  height: 200px;
+  padding: 10px;
+}
+
+.creation {
+  display: flex;
+  background-color: black;
+  color: white;
+  padding-left: 100px;
+  padding-top: 20px;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.ligne {
+  padding-left: 50px;
+  padding-top: 15px;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+}
+
+.mention-details {
+  display: flex;
+  background-color: black;
+  color: white;
+  padding-left: 100px;
+  padding-top: 10px;
+  justify-content: space-between;
+  list-style: none;
+  width: 1350px;
+  font-size: 14px;
+}
+
+.createur {
+  display: flex;
+  background-color: black;
+  color: white;
+  padding-left: 100px;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.reseaux-sociaux {
+  display: flex;
+  width: 350px;
+  justify-content: space-evenly;
+}
+
+.reseaux_ {
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Personnalisation des icones */
+.reseaux_style {
+  font-size: 28px;
+  color: #ffffff;
+  background-color: black;
+}
+
+/*********** PAGE DEVELOPPEMENT **********/
+* .recherche1 {
+  width: 100%;
+  padding-right: 5px;
+}
+
+.entree {
+  background-color: #f1f1f1;
+  color: #333;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  width: 50%;
+  width: 200px;
+}
+
+.boutonrecherche {
+  background-color: #0b0087;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.metiers {
+  margin: 70px;
+  padding-top: 5px;
+  padding-bottom: 95px;
+}
+
+.meilleurs-metier {
+  min-height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+
+/* Création d'une boite pour chaque logiciel */
+.metier-box {
+  background-color: rgb(241, 241, 241);
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-width: 300px;
+  height: 500px;
+  flex: 1;
+}
+
+/* Les éléments sous la photo */
+.metier-detail {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #ffffffdf;
+}
+
+/* Le nom du logiciel */
+.metier-nom {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 3px;
+  padding-left: 10px;
+}

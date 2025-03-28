@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Website HTML CSS JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <main class="main">
+        <!-- <header class="header">
+            <a href="#" class="logo">Quiz.</a>
+            <img src="logo.png" alt="">
+        </header> -->
+
+        <div class="container">
+            <section class="quiz-section">
+                <div class="quiz-box">
+                    <h1>Quiz culture générale</h1>
+                    <div class="quiz-header">
+                        <span class="header-score">Score : 0 / 5</span>
+                    </div>
+
+                    <h2 class="question-text">Dans quelle ville se trouve l'université de Harvard ?</h2>
+
+                    <div class="option-list">
+                        <!-- <div class="option">
+                            <span>A. New York</span>
+                        </div>
+                        <div class="option">
+                            <span>B. Boston</span>
+                        </div>
+                        <div class="option">
+                            <span>C. Washington D.C.</span>
+                        </div>
+                        <div class="option">
+                            <span>D. Chicago</span>
+                        </div> -->
+                    </div>
+
+                    <div class="quiz-footer">
+                        <span class="question-total">Question 1 sur 5</span>
+                        <button class="next-btn">Next</button>
+                    </div>
+                </div>
+
+                <div class="result-box">
+                    <h2>Résultat !</h2>
+                    <div class="percentage-container">
+                        <div class="circular-progress">
+                            <span class="progress-value">0%</span>
+                        </div>
+
+                        <span class="score-text">Votre Score : 0 sur 5</span>
+                    </div>
+
+                    <div class="buttons">
+                        <button class="tryAgain-btn">Recommencer</button>
+                        <button class="goHome-btn">Acceuil</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="home">
+                <div class="home-content">
+                    <h1>Quiz de culture générale</h1>
+                    <p>Avec ce quiz de niveau intermédiaire, tous les domaines (ou presque) sont traités. Qu’il s’agisse d’histoire, de littérature, de personnalités politiques ou encore de géographie, faites le point sur vos connaissances en 20 questions ludiques.</p>
+                    <button class="start-btn">Commencer le quiz</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="popup-info">
+        <h2>Guide du quiz</h2>
+        <span class="info">Des questions vont vous être posées</span>
+        <span class="info">Sélectionnez la réponse que vous pensez être correcte</span>
+        <span class="info">Il n'y a qu'une réponse possible par question</span>
+        <span class="info">À la fin du quiz, votre nombre de réponses correctes s'affiche</span>
+
+        <div class="btn-group">
+            <button class="info-btn exit-btn">Retour</button>
+            <a href="#" class="info-btn continue-btn">Continuer</a>
+        </div>
+    </div>
+
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

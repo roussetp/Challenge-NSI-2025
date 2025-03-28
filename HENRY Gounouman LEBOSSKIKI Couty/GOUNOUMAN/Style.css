@@ -1,0 +1,23 @@
+body
+{
+    color:whitesmoke;
+    background-image: url('image du real de madrid.jpg');
+}
+h1
+{
+    border: 2px solid #000;
+    padding: 10px;
+    display: inline-block;
+    color:yellow;
+    background-color: black;
+    font-weight:bold;
+}
+h2
+{
+    border: 2px solid #000;
+    padding: 10px;
+    display: inline-block;
+    color:yellow;
+    background-color: black;
+    font-weight:bold;
+}

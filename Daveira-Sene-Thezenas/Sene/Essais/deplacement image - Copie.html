@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jeu de placement d'image</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .grille {
+      display: grid;
+      grid-template-columns: repeat(4, 170px);
+      /* 3 colonnes de 100px de large */
+      grid-template-rows: repeat(5, 170px);
+      /* 3 lignes de 100px de hauteur */
+      gap: 1px;
+      /* Espacement entre les cellules */
+      border: 1px solid black;
+    }
+
+    .cellule {
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image {
+      width: 150px;
+      height: 150px;
+      cursor: grab;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grille">
+    <div class="cellule" data-x="0" data-y="0"></div>
+    <div class="cellule" data-x="1" data-y="0"></div>
+    <div class="cellule" data-x="2" data-y="0"></div>
+    <div class="cellule" data-x="0" data-y="1"></div>
+    <div class="cellule" data-x="1" data-y="1"></div>
+    <div class="cellule" data-x="2" data-y="1"></div>
+    <div class="cellule" data-x="0" data-y="2"></div>
+    <div class="cellule" data-x="1" data-y="2"></div>
+    <div class="cellule" data-x="2" data-y="2"></div>
+    <div class="cellule" data-x="-1" data-y="-1"></div>
+    <div class="cellule" data-x="1" data-y="-1"></div>
+    <div class="cellule" data-x="2" data-y="-1"></div>
+    <div class="cellule" data-x="-2" data-y="-2"></div>
+    <div class="cellule" data-x="-1" data-y="-2"></div>
+    <div class="cellule" data-x="1" data-y="-2"></div>
+    <div class="cellule" data-x="2" data-y="-2"></div>
+    <div class="cellule" data-x="-3" data-y="-3"></div>
+    <div class="cellule" data-x="-2" data-y="-3"></div>
+    <div class="cellule" data-x="-1" data-y="-3"></div>
+    <div class="cellule" data-x="1" data-y="-3"></div>
+  </div>
+
+  <img id="image-a-deplacer" class="image" src="patcho.png" alt="Image à déplacer" draggable="true">
+
+  <script>
+    const image = document.getElementById('image-a-deplacer');
+    const cellules = document.querySelectorAll('.cellule');
+
+    let positionCorrecte = { x: 1, y: 1 }; // Position correcte de l'image
+
+    image.addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('text/plain', image.id);
+    });
+
+    cellules.forEach(cellule => {
+      cellule.addEventListener('dragover', (e) => {
+        e.preventDefault(); // Permet le drop dans la cellule
+      });
+
+      cellule.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const id = e.dataTransfer.getData('text/plain');
+        const draggedImage = document.getElementById(id);
+
+        // Vérifier si la position est correcte
+        const x = parseInt(cellule.dataset.x);
+        const y = parseInt(cellule.dataset.y);
+
+        if (x === positionCorrecte.x && y === positionCorrecte.y) {
+          alert('Bonne réponse !');
+          cellule.appendChild(draggedImage); // Placer l'image dans la cellule
+          draggedImage.style.cursor = 'default'; // Changer le curseur de l'image
+          draggedImage.draggable = false; // Empêcher de déplacer l'image à nouveau
+        } else {
+          alert('Mauvaise réponse. Essayez encore !');
+        }
+      });
+    });
+    
+  </script>
+</body>
+
+</html>

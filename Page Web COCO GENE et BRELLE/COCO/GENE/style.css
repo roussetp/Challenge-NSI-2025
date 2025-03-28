@@ -1,0 +1,238 @@
+body
+{
+    color: black;
+    background-image: url("fond\ ecran\ de\ coco\ qui\ aime\ le\ coco.jpg");
+    background-attachment: fixed ;
+    background-size: cover;
+}
+body.modeNuit
+{
+    color: white;
+    background-image: url("pyr_nuit.jpg");
+    background-attachment: fixed ;
+    background-size: cover;
+    header {
+        border: solid 5px #390739;
+        background-color: #792c97;
+        box-shadow: 12px 12px 5px #1d0a2680;
+    }
+    #intro {
+        border: solid 5px #390739;
+        background-color: #792c97;
+        box-shadow: 12px 12px 5px #1d0a2680;
+    }
+    #intro nav {
+        background-color: #c577e3;
+        box-shadow: 12px 12px 5px #00000080;
+    }
+    nav a{
+        color: white;
+    }
+    nav a:hover{
+        color: purple;
+        font-style:italic;
+    }
+    #message nav p{
+        border: solid 5px #390739;
+        background-color: #792c97;
+        box-shadow: 12px 12px 5px #1d0a2680;        
+    }
+    button{
+        border: solid 5px #390739;
+        background-color: #792c97;
+    }
+    button:hover{
+        border: solid 5px #1151db;
+        background-color: #1418ff;
+        box-shadow: 10px 10px 5px #698bfc80;
+    }
+}
+header 
+{
+    display: flex;
+    font-family: cursive;
+    border: solid 5px #dbac11;
+    justify-content: space-between;
+    font-size: 20px;
+    background-color: #fada4c;
+    box-shadow: 12px 12px 5px #fcf26980;
+    padding: 25px;
+    margin: auto;
+    width : 800px ;
+}
+#titre_principal
+{
+    display: flex;
+    margin: 5px;
+    margin-right: auto;
+    text-align: end;
+}
+#Pygif
+{
+    display: flex ;
+	flex-direction: row ;
+	width: 118px ;
+    height: 120px ;
+}
+#intro
+{
+    display: flex;
+    font-family: cursive;
+    justify-content: space-between;
+    background-color: #fada4c ;
+    opacity : 0.9 ;
+    border: solid 5px #dbac11;
+    box-shadow: 12px 12px 5px rgba(252, 242, 105, 0.5) ;
+    margin : auto ;
+    margin-top: 30px ;
+    padding: 35px;
+    width : 800px;
+}
+#intro nav
+{
+    
+    background-color: rgb(248, 234, 151);
+    font-family: cursive;
+    justify-content: space-between;
+    box-shadow: 12px 12px 5px rgba(7, 6, 1, 0.5) ;
+    width : 300px;
+    opacity : 0.9 ;
+    margin : 0;
+    border-radius: 20px ;
+    flex: 0,5;
+    
+}
+#intro nav h1
+{
+    text-align: center ; 
+    font-size: 1.5em ;
+    font-weight: bold ;
+    font-family: Lucida Handwriting;
+}
+#intro article
+{
+    display: flex;
+    margin: 20px;
+    flex: 1;
+    text-align: justify;
+    font-size: 1.3em;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+#intro p1
+{
+    font-weight: bold;
+    font-size:19px;
+}
+nav ul
+{
+    font-size: 1.25em ;
+}
+nav li
+{
+    margin-bottom: 20px;
+}
+nav a
+{
+    font-family: cursive;
+    text-decoration: none ;
+    color: #080825 ;
+    font-weight: bold ;
+}
+nav a:hover
+{
+    color: #b55100 ;
+    font-style : italic ;
+}
+#message nav p
+{
+    text-align: center;
+    display: flex;
+    font-family: cursive ;
+    font-size: 45px;
+    justify-content: space-between;
+    background-color: #fada4c ;
+    opacity : 0.9 ;
+    border : solid 5px #dbac11;
+    box-shadow: 12px 12px 5px rgba(252, 242, 105, 0.5) ;
+    margin : auto ;
+    margin-top: 30px ;
+    padding: 35px;
+    width : 800px;
+    font-weight:bolder;
+
+}
+button
+{
+    cursor: pointer;
+    padding: 20px 40px;
+    font-size: 15px;
+    margin-top: 10px;
+    background-color: #fbde75;  
+    border: solid 5px #dbc011; 
+    font-family: cursive;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+button:hover
+{
+    border: solid 5px #390739;
+    background-color: #792c97;
+    box-shadow: 10px 10px 5px #1d0a2680 ;
+}
+#quizz
+{
+    width : 800px ;
+    margin : auto ;
+    padding: 25px ;
+    background-color: #fada4c;
+    opacity : 0.9 ;
+    border: solid 5px #dbac11;
+    box-shadow: 12px 12px 5px #fcf26980;
+    margin-top: 30px ;
+    text-align: center ;
+}
+.bloc_question
+{
+    background-color: #71c9e4 ;
+    opacity : 0.9 ;
+    border : 2px  #c48dd9 ;
+    border-radius: 25px ;
+    margin : 20px ;
+    padding: 10px ;
+    color : black ;
+    font-family: compagnonroman, Georgia, 'Times New Roman', serif ;
+}
+#imageContainer {
+    position: relative;
+  }
+  #imageContainer img 
+  {
+    max-width: 100%;
+    height: auto;
+    border:solid 5px black;
+    border-radius: 30px;;
+  }
+  #clickPosition {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgb(255, 166, 0);
+    background-color: rgba(255, 0, 0, 0.5);
+    padding: 5px;
+  }
+  aside {
+  width: 40%;
+  padding-left: 0.5rem;
+  margin-left: 0.5rem;
+  float: right;
+  box-shadow: inset 5px 0 5px -5px #d7c719;
+  font-style: italic;
+  color: #e2b810;
+  }
+
+  aside > p {
+    margin: 0.5rem;
+  }

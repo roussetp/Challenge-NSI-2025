@@ -1,0 +1,664 @@
+
+            /* Polices d'écriture */
+
+/* Importation de deux police d'écriture */
+@font-face 
+{
+    font-family: 'aleoregular' ; /* Police pour les textes principaux */
+    src: url('font/aleo-regular-webfont.woff2') format('woff2') ,
+         url('font/aleo-regular-webfont.woff') format('woff') ;
+    font-weight: normal ;
+    font-style: normal ;
+
+}
+
+@font-face 
+{
+    font-family: 'compagnonroman' ; /*Police pour les citation et le quizz */
+    src: url('font/compagnon-roman-webfont.woff2') format('woff2') ,
+         url('font/compagnon-roman-webfont.woff') format('woff') ;
+    font-weight: normal ;
+    font-style: normal ;
+
+}
+
+/* La police Georgia qui existe déjà par défault sera utilisé pour les titres */
+
+
+            /* Element principaux */
+
+
+body
+{
+    font-family: aleoregular, Georgia, 'Times New Roman', serif ;
+    background-image: url("images/fond.jpg") ;
+    background-attachment: fixed ;
+    color: white ; 
+}
+
+.bloc_page 
+{
+	width : 900px ;
+	margin : auto ;
+
+}
+
+nav a, h1
+{
+	 font-family: Georgia, 'Times New Roman', serif ;	 
+}
+
+
+            /* Header */
+
+
+header 
+{
+	display: flex ;
+	justify-content: space-between ;
+    background-color: #25112f ;
+    opacity : 0.9 ;
+    border : 2px #25112f solid ;
+    border-radius: 5px ;
+    box-shadow: 12px 12px 5px #594961 ;
+    margin : 20px ;
+}
+
+
+/* Titre */
+
+
+#titre_principal
+{
+	display : flex
+}
+
+#jupiter
+{
+	display: flex ;
+	flex-direction: row ;
+	width: 118px ;
+    height: 120px ;
+}
+
+
+
+header h1
+{
+	font-size : 2em ;
+	margin: auto ;
+    color: white ;
+}
+
+
+/* Naviagtion */
+
+
+header ul
+{
+	list-style-type: none ;
+    display: flex ;
+	align-self:flex-end ;
+}
+
+header li
+{
+    margin-right: 25px ;
+}
+
+header a
+{
+    font-size: 1.4em ;
+    color: #63e0e7 ;
+    text-decoration: underline ;
+}
+
+header a:hover
+{
+    color: #ff9af1 ;
+    font-style : italic ;
+}
+
+
+            /* Introduction */
+
+
+#intro
+
+{
+    display: flex ;
+    justify-content: space-between ;
+    background-color: #28205e ;
+    opacity : 0.9 ;
+    border : 2px #28205e solid ;
+    border-radius: 5px ;
+    box-shadow: 12px 12px 5px #656182 ;
+    margin : 20px ;
+    margin-top: 30px ;
+}
+
+
+/* Naviagtion */
+
+
+#intro nav 
+{
+    background-color: #ae9eed ;
+    opacity : 0.9 ;
+    border : 2px #ae9eed ;
+    border-radius: 5px ;
+    box-shadow: 9px 9px 4px #635d79 ;
+    margin : 20px ;
+    flex : 0.5 ;
+    color: #080825 ;
+}
+
+#intro nav h1
+{
+    text-align: center ; 
+    font-size: 1.7em ;
+    font-weight: bold ;
+}
+
+nav ul 
+{
+    font-size: 1.25em ;
+}
+
+nav li 
+{
+    margin-bottom: 5px ;
+}
+
+nav a
+{
+    font-family: compagnonroman, Georgia, 'Times New Roman', serif ;
+    text-decoration: none ;
+    color: #080825 ;
+    font-weight: bold ;
+}
+
+nav a:hover
+{
+    color: #b50081 ;
+    font-style : italic ;
+}
+
+
+/* Texte introduction */
+
+
+#intro article
+{
+    display: flex;
+    margin : auto ;
+    flex : 1 ;
+    text-align: justify ;
+    font-size : 1.3em ;
+    margin-right: 20px ; 
+    margin-left: 10px ; 
+}
+
+
+            /* Section 1 */
+
+
+#sect_un
+{
+    display: flex ;
+    justify-content: space-between ;
+    background-color: #3b2450 ;
+    opacity : 0.9 ;
+    border : 2px #3b2450 solid ;
+    border-radius: 5px ;
+    box-shadow: 12px 12px 5px #766387 ;
+    margin : 20px ;
+}
+
+
+/* Aside sur Margaret Hamilton */
+
+
+#sect_un #margaret 
+{
+    display: flex ;
+    justify-content: space-between ; 
+    align-items: center ;
+    flex-direction: column ;
+    background-color: #9577ff ;
+    opacity : 0.9 ;
+    border : 2px #9577ff ;
+    border-radius: 5px ;
+    box-shadow: 9px 9px 4px #685e8a ;
+    margin : 20px ;
+    font-size: 0.8em ;
+    width: 220px ;
+    color : black ;
+
+}
+
+#sect_un #margaret h1
+{
+    font-size: 1.4em ;
+    text-decoration: underline ;
+}
+
+#sect_un #margaret img
+{
+    width: 200 ;
+    height: 248.4375 ;
+    margin: 10px ;
+    box-shadow: 6px 6px 5px rgb(75, 75, 75) ;
+}
+
+#sect_un figcaption 
+{
+    text-align: center
+}
+
+
+/* Paragraphe */
+
+
+#sect_un article
+{
+    display: flex ;
+    flex-direction: column ;
+    margin-left: 20px ;
+}
+
+#sect_un article h1
+{
+    font-size: 1.7em ;
+    text-align: center ;
+}
+
+#sect_un article p
+{
+    text-align: justify ;
+    font-size: 1.1em ;
+}
+
+
+/* Citation */
+
+
+#sect_un article aside  
+{
+    display:flex ;
+    background-color: #c48dd9 ;
+    opacity : 0.9 ;
+    border : 2px  #c48dd9 ;
+    border-radius: 5px ;
+    box-shadow: 8px 8px 5px #7e6388 ;
+    margin : 20px ;
+    margin-top: 10px ;
+    padding: 0.1px ;
+    color : black ;
+    font-family: compagnonroman, Georgia, 'Times New Roman', serif ;
+}
+
+#sect_un article aside p
+{
+    text-align: center ;
+    font-weight: bold ;
+}
+
+#sect_un article aside img
+{
+    width: 86.751px ;
+    height: 87.48px ;
+}
+
+
+            /* Section 2 */
+
+
+#sect_deux
+{
+    display: flex ;
+    justify-content: space-between ;
+    background-color: #3b2450 ;
+    opacity : 0.9 ;
+    border : 2px #3b2450 solid ;
+    border-radius: 5px ;
+    box-shadow: 12px 12px 5px #766387 ;
+    margin : 20px ;
+}
+
+
+/* Titre */
+
+
+#sect_deux article div 
+{
+    display: flex ;
+    justify-content: space-between ;
+    margin: 20px ;
+    margin-top: 10px ;
+}
+
+#sect_deux article div h1
+{
+    font-size: 1.7em ;
+    text-align: left ;
+}
+
+#sect_deux article div img
+{
+    width: 119.25px ;
+    height: 120px ;
+}
+
+
+/* Paragraphe */
+
+
+#sect_deux article p
+{
+    text-align: justify ;
+    font-size: 1.1em ;
+    margin:20px ;
+}
+
+
+/* Citation */
+
+
+#sect_deux aside 
+{
+    background-color: #c48dd9 ;
+    opacity : 0.9 ;
+    border : 2px  #c48dd9 ;
+    border-radius: 5px ;
+    box-shadow: 8px 8px 5px #7e6388 ;
+    margin : auto ;
+    margin-left: 15px ;
+    margin-right: 5px ;
+    padding: 10px ;
+    color : black ;
+    font-family: compagnonroman, Georgia, 'Times New Roman', serif ;
+    height: 75% ;
+}
+
+#sect_deux aside p
+{
+    text-align: center ;
+    font-weight: bold ; 
+}
+
+
+            /* Conclusion */
+
+
+#conclusion 
+{
+    display: flex ;
+    justify-content: space-between ;
+    background-color: #28205e ;
+    opacity : 0.9 ;
+    border : 2px #28205e solid ;
+    border-radius: 5px ;
+    box-shadow: 12px 12px 5px #656182 ;
+    margin : 20px ;
+}
+
+
+/* Texte conclusion */
+
+
+#conclusion article p
+{
+    text-align: justify ;
+    font-size : 1.3em ;
+    margin : 20px ;
+}
+
+/* Image */
+
+
+#conclusion aside img 
+{
+    width: 287.925px ;
+    height: 243.375px ;
+    margin : 20px ;
+    box-shadow: 8px 8px 5px #7f7f7f ;
+}
+
+
+            /* Sources */
+
+
+#source_section
+{
+    background-color: #564b8b ;
+    opacity : 0.9 ;
+    border : 2px #564b8b solid ;
+    border-radius: 5px ;
+    box-shadow: 12px 12px 5px #605b74 ;
+    margin : 20px ;
+}
+
+
+/* Titre */
+
+
+#titre_sources:hover ~#texte_sources
+{
+    max-height: 4000px ;
+    transition: all 0.25s ease-in-out ;           
+}
+
+#titre_sources
+{
+    display : flex ;
+}
+
+#source_section h1
+{
+    font-size: 1.8em ;
+    padding-left: 20px ;
+}
+
+#source_section img
+{
+    width: 62.976px ;
+    height: 61.44px ;
+}
+
+
+/* Texte */
+
+
+#texte_sources:hover
+{
+    max-height: 4000px ;
+    transition: all 0.25s ease-in-out ;
+}
+
+#texte_sources 
+{
+    margin: 20px ;
+    margin-top: 0px ;
+    color: white ;
+    font-size: 1.2em ;
+    overflow: hidden ;
+    max-height: 0px ;
+    transition: all .5s ease-in-out ;
+}
+
+#source_section p
+{
+    text-decoration: underline ;
+}
+
+
+/* Navigation */
+
+
+#source_section a
+{
+    color : white ;
+    text-decoration: none ;
+}
+
+#source_section a:hover
+{
+    color : #63e0e7 ;
+    text-decoration: underline ;
+    font-style: italic ;
+}
+
+#source_section a:visited
+{
+    color : #ffa5db ;
+}
+            
+
+            /* Boutton du quizz */
+
+
+.bouton_quizz a 
+{
+    display: block ;
+    text-align: center ;
+    padding: 20px ;
+    margin:auto ;
+    background-color: #c48dd9 ;
+    opacity : 0.9 ;
+    border : 2px #c48dd9 ;
+    border-radius: 3px ;
+    box-shadow: 3px 3px 1px #7e6388 ;
+    color : black ;
+    text-decoration: none ;
+    width: 200px ;
+    font-size: 1.2em ;
+}
+
+.bouton_quizz a:hover 
+{
+    background-color: #4b245a ;
+    border : 2px #0f0c1a ;
+    color : white ;
+}
+
+
+            /* Footer */
+
+
+footer 
+{
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(39, 39, 39) ;
+    opacity : 0.9 ;
+    border : 2px  rgb(39, 39, 39) ;
+    border-radius: 5px ;
+    box-shadow: 8px 8px 5px rgb(75, 75, 75) ;
+    margin : 20px ;
+    padding: 0.1px ;
+    color : white ;
+    font-family: compagnonroman, Georgia, 'Times New Roman', serif ;
+    text-align: center ;
+}
+
+footer a
+{
+    color : rgb(181, 197, 44) ;
+}
+
+
+            /* Quizz */
+
+
+#quizz
+{
+    width : 700px ;
+    margin : auto ;
+    padding: 20px ;
+    background-color: #28205e ;
+    opacity : 0.9 ;
+    border : 2px #28205e solid ;
+    border-radius: 5px ;
+    box-shadow: 12px 12px 5px #656182 ;
+    margin-top: 30px ;
+    text-align: center ;
+}
+
+
+/* Questions */
+
+
+.bloc_question
+{
+    background-color: #c48dd9 ;
+    opacity : 0.9 ;
+    border : 2px  #c48dd9 ;
+    border-radius: 25px ;
+    margin : 20px ;
+    padding: 10px ;
+    color : black ;
+    font-family: compagnonroman, Georgia, 'Times New Roman', serif ;
+}
+
+#quizz h2
+{
+    font-size: 1.2em ;
+}
+
+#quizz p
+{
+    font-size: 1.1em ;
+}
+
+
+/* Boutton des résultats */
+
+
+#bouton_resultats
+{
+    background-color: #c48dd9 ;
+    opacity : 0.9 ;
+    border : 2px  #c48dd9 ;
+    border-radius: 3px ;
+    box-shadow: 3px 3px 1px #7e6388 ;
+    color : black ;
+    font-family: compagnonroman, Georgia, 'Times New Roman', serif ;
+    font-size: 1.1em ;
+    padding: 10px ;
+}
+
+#bouton_resultats:hover 
+{
+    background-color: #3c2046 ;
+    color: white ;
+}
+
+
+/* Bouton de retour à la page principale */
+
+
+.bouton_fin a 
+{
+    display: block ;
+    text-align: center ;
+    padding: 20px ;
+    margin:auto ;
+    background-color: #9577ff ;
+    border : 2px #9577ff ;
+    border-radius: 3px ;
+    box-shadow: 3px 3px 1px #685e8a ;
+    color : black ;
+    text-decoration: none ;
+    width: 200px ;
+    font-size: 0.9em ;
+}
+
+.bouton_fin a:hover 
+{
+    background-color: #0f0c1a ;
+    border : 2px #0f0c1a ;
+    color : white ;
+}
+
+

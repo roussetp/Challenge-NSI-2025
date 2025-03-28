@@ -1,0 +1,218 @@
+<html>
+
+	<head> <!--Elements non visible sur la page sauf le titre sur l'onglet de navigation -->
+		<meta charset="utf-8"> 
+        <title>Margaret Hamilton et Apollo 11</title>
+        <link rel="stylesheet" href="style.css"> <!--Lien vers la feuille de style en CSS -->
+	</head>
+
+    <body> <!--Ensemble des éléments visibles de la page -->
+		<div class="bloc_page">
+
+		<!-- EN-TÊTE -->
+
+			<header> <!-- Balise structurante pour l'en-tête de la page -->
+				<div id="titre_principal">
+					<img src="images/jupiter.gif"id=jupiter alt="Jupiter"/>
+					<h1> Margaret Hamilton et Apollo 11 </h1>					
+				</div>
+
+				<div>
+					<ul>
+						<li><a href="histoire.html">Son histoire</a></li>
+						<li><a href="quizz.html">Quizz</a></li> <!-- Navigation vers la page de quizz dont le code se trouve sur une autre page htlm -->
+					</ul>
+				</div>
+			</header>
+		
+		<!-- INTRODUCTION -->
+
+		<section id=intro> <!-- Chaque section a une id unique qui lui permet d'être identifiée pour la navigation dans la page avec le sommaire, ainsi que pour cibler les éléments en CSS -->
+			<nav> <!-- Balise spécifique pour la navigation -->
+				<h1>Sommaire</h1>
+				<ul>
+					<li><a href="#margaret">Margaret Hamilton</a></li>
+					<li><a href="#sect_un">Partie 1</a></li>
+					<li><a href="#sect_deux">Partie 2</a></li>
+					<li><a href="#conclusion">Conclusion</a></li>
+					<li><a href="#source_section">Sources</a></li>
+				</ul>
+			</nav>
+
+			<article> <!-- Tous les textes principaux sont contenues dans les balises article faites pour -->
+				<p>
+					Les milieux de l’espace et de l’informatique sont dans l’imaginaire collectif des 
+					environnements majoritairement masculins. En 1969, l’Amérique se prépare à envoyer 
+					le premier homme sur la Lune pour la mission bien connue d’Apollo 11. Le succès de 
+					la mission est connu de tous, permettant à Neil Armstrong et ses deux amis de rentrer
+					dans l’Histoire. Pourtant, sans une femme, Margaret Hamilton, l’issu de la mission 
+					n’aurais surement pas été aussi positive. Voici son histoire.
+				</p>
+			</article>
+
+		</section>
+		
+		<!-- PREMIERE PARTIE -->
+
+		<section id=sect_un>
+
+			<div>
+				<article>
+					<h1>Comment elle invente le système de priorisation des tâches</h1>
+					<p>
+						Ayant rejoint la prestigieuse école du MIT, Margaret Hamilton se démarque très 
+						tôt de par ses talents de développeuse, et devient responsable de l’équipe chargée 
+						du développement de tous les logiciels embarqués dans la fusée à 25 ans. C’est elle 
+						qui en écrira la majorité du code consacrant malgré son statut de mère, des jours 
+						et des nuits entières à son programme. 
+					</p>
+								
+					<p>
+						Cet investissement est très critiqué à l’époque. Les mœurs voulaient qu’une 
+						mère se consacre à 100% à son enfant, et avoir une carrière en parallèle avec 
+						autant de responsabilités était impensable pour l’époque. C’est ce qui amena 
+						Margaret à souvent devoir emmener sa fille de 4 ans au laboratoire pour pouvoir 
+						travailler sur son code. Un jour, alors que sa fille jouait avec le clavier du 
+						simulateur d’atterrissage, l’ordinateur plante car submergé d’informations. Il 
+						affiche alors le message d’erreur P01. Sans l’autorisation de ses directeurs qui 
+						ne pensent pas les astronautes capables de ce genre d’erreur, elle revient au 
+						labo le soir, et imagine le moyen permettant aux ordinateurs de prioriser les 
+						tâches, permettant à l’ordinateur en cas de surcharge d’exécuter les tâches 
+						ayant la plus haute priorité, et qu’il puisse interrompre des tâches moins 
+						prioritaires.
+					</p>
+
+					<aside> <!-- Les citations et autres sont dans des balises asides -->
+						<img src="images/saturne.gif" class=saturne alt="Saturne"/>
+						<p>
+						"Les gens me disaient : Comment pouvez-vous quitter votre fille ? 
+						Comment pouvez-vous faire cela ? " 
+						</p>
+					</aside>
+				</article>
+			</div>
+
+
+			<aside id="margaret">
+				<h1>Margaret Hamilton</h1>
+				<figure>
+					<a href="images/margaret_code.jpg"><img src="images/margaret_code.jpg" alt="Margaret et son code" 
+					title="Cliquez pour agrandir !" class="margaret_photo"/></a>
+					<figcaption>Margaret à coté de l'entièreté de son code pour la mission Apollo 11</figcaption>
+				</figure>
+				<ul>
+					<li>Née le 17 aout 1936 dans l’Indiana aux Etats-Unis </li>
+					<li>Informaticienne et mathématicienne connue principalement pour sa contribution au programme spatial Apollo.</li> 
+					<li>C’est elle qui pose les premiers modèles de développement informatique et les fondations techniques de la conception.</li> 
+					<li>Elle est aussi à l’origine de l’expression « software engineering » </li>
+				</ul>
+			</aside>
+		</section>
+
+		<!-- DEUXIEME PARTIE -->
+		<section id=sect_deux>
+			<aside>
+				<p>
+					« Des programmes de récupération avaient été incorporés dans le logiciel qui 
+					permettaient d'éliminer les tâches ayant les priorités plus faibles et d’exécuter
+					les plus importantes. Si l'ordinateur n'avait pas reconnu le problème et entrepris
+					ces actions de récupérations, je doute qu'Apollo 11 aurait réussi son atterrissage 
+					sur la Lune comme il l'a fait. » </br> </br>
+					— Margaret Hamilton, Lettre à Datamation , 1er mars 1971
+				</p>
+			</aside>
+
+			<article id="para_deux">
+				<div>
+					<h1>Comment elle sauve la mission vers la Lune</h1>
+					<img src="images/cailloux.gif"class=cailloux alt="Cailloux"/>
+				</div>
+
+				<p>
+					Le 21 juillet 1969, 3 minutes avant l’alunissage, à cause d’un radar défectueux, 
+					les ordinateurs de la fusée sont submergés d’informations. L’ordinateur affiche 
+					alors le message suivant : "J'ai trop de tâches à effectuer par rapport à ce que
+					je suis en mesure de réaliser et je vais continuer en n'effectuant que les tâches
+					les plus importantes". La mission est un succès, le module se pose sur la Lune 
+					et Neil Armstrong devient le premier Homme à marcher sur la lune, avec ses 
+					compagnons Michael Collins et Buzz Aldrin. 
+				</p>
+			</article>
+
+		</section>
+		 
+		 <!-- CONCLUSION --> 
+
+		<section id=conclusion>
+			<article>
+				<p>
+					Margaret Hamilton a révolutionné l’ingénierie logicielle et la conception de 
+					programmes complexes, qui n’auraient pu être utilisables sans les méthodes 
+					qu’elle a inventées pour réduire l’impact des nombreux bugs non détectés. Son 
+					programme a sauvé la vie des astronautes lors d’Apollo 11. En 2003, la NASA la 
+					décore de l'Exceptionnal Space Act Award , et en 2016 elle reçoit la médaille 
+					présidentielle de la Liberté de la part de Barack Obama, la plus haute distinction 
+					civile aux États-Unis.
+				</p>
+			</article>
+
+			<aside>
+				<a href="images/tintin_grand.jpg"><img src="images/tintin.jpg" class="tintin" alt="Tintin" title="Cliquez pour agrandir !"/></a>
+			</aside>
+
+
+		</section>
+		
+		<!-- SOURCES -->
+
+		<section id="source_section">
+			<div id="titre_sources">
+				<img src="images/trou_noir.gif" class=trounoir alt="Trou Noir"/>
+				<h1 >Sources :</h1>
+			</div>
+			<div id=texte_sources>
+				<p>
+					Sur son histoire <br/><br/>
+					<ul>
+						<li><a href="https://information.tv5monde.com/terriennes/il-y-50-ans-les-premiers-pas-de-l-homme-sur-la-lune-grace-une-femme-310529">https://information.tv5monde.com/terriennes/il-y-50-ans-les-premiers-pas-de-l-homme-sur-la-lune-grace-une-femme-310529</a></li>
+						<li><a href="https://fr.wikipedia.org/wiki/Margaret_Hamilton_(scientifique)">https://fr.wikipedia.org/wiki/Margaret_Hamilton_(scientifique)</a></li>
+						<li><a href="https://www.lefigaro.fr/secteur/high-tech/2018/03/08/32001-20180308ARTFIG00005-ces-femmes-du-numerique-qui-ont-change-le-cours-de-l-histoire.php">https://www.lefigaro.fr/secteur/high-tech/2018/03/08/32001-20180308ARTFIG00005-ces-femmes-du-numerique-qui-ont-change-le-cours-de-l-histoire.php</a></li></br>
+					</ul>
+				</p>
+				<p>
+					Sur la missions <br/><br/>
+					<ul>
+						<li><a href="https://fr.wikipedia.org/wiki/Apollo_11">https://fr.wikipedia.org/wiki/Apollo_11</a></li>
+						<li><a href="https://fr.wikipedia.org/wiki/Programme_Apollo">https://fr.wikipedia.org/wiki/Programme_Apollo</a></li>
+					</ul>
+				</p>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
+		</section>
+		<!-- BAS DE PAGE -->
+	
+		<div class="bouton_quizz"> <!-- "bouton" qui pour faire le quizz (ce n'est un boutton que d'apparence, c'est en faite un simple lien mis en forme en CSS pour ressembler à un bouton) -->
+  			<p>
+   				<a href="quizz.html">Faire le Quizz !</a>
+				   <br>
+				   <br>
+				   <br>
+				   <br>
+				   <br>
+				   <br>
+ 			</p>
+		</div>
+
+		<footer> <!-- Balise structurante pour le bas de la page -->
+			<p>
+				Site web par Menu Pauline 1ère G4. Le mot de <a href="images/xan.jpg" class ="xan" alt="Xan" title="C'est mon chaton !">Xan</a> : cg f   fwq w q lzklkz;,n,,dnnvc
+			</p>
+		</footer>
+		</div>
+	</body>
+</html>

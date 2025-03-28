@@ -1,0 +1,19 @@
+body {
+  color: azure;
+  font-family: "DMSerif", Verdana;
+  background-image: url("real.jpeg");
+  background-attachment: fixed;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+
+main {
+  min-height: 500px;
+  width: 90%;
+  background: rgba(245, 245, 245, 0.9);
+  margin: 0 auto;
+  border: 2px solid rgb(0, 140, 255);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0px 0px 20px 4px #81cfc6;
+  padding: 15px;
+}

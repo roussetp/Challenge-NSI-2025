@@ -1,0 +1,182 @@
+/* Style pour le body */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('incarnation/background.png');
+  background-size: auto;
+  background-attachment: fixed;
+  z-index: -1;
+  width: 100%; /* On modifie la largeur pour prendre toute la page */
+  margin: 0; /* On retire les marges par défaut */
+  padding: 0;
+}
+
+/* Navigation bar */
+.nav-bar {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* La navbar prend toute la largeur */
+/* Pour qu’elle soit au-dessus des autres éléments */
+}
+
+.nav-bar h1 {
+  color: rgb(62, 224, 30);
+  margin: 0;
+  flex: 1; /* Permet au titre de prendre l'espace restant */
+  text-align: left;
+}
+
+.nav-bar-img {
+  display: flex;
+  margin: auto;
+  margin-left: 15px;
+  width: 65px;
+  height: 65px;
+}
+
+.nav-bar-img h1 {
+  margin: auto;
+  padding-left: 1.5rem;
+}
+
+.nav-bar-liens {
+  margin-left: auto;
+  animation: fadeInImages 2s ease-out forwards;
+}
+
+.nav-bar-liens ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-bar-liens li {
+  margin-left: 20px;
+}
+
+.nav-bar-liens li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.nav-bar-liens li a:hover {
+  color: #42e920;
+}
+
+/* Carte plus grande */
+#mapid {
+  height: 90vh; /* 90% de la hauteur de la fenêtre */
+  width: 100%; /* 100% de la largeur de la page */
+  margin-top: 80px; /* Espace pour la navbar fixée */
+}
+
+/* Image container */
+#imageContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border: 5px solid #ddd;
+  border-radius: 10px;
+}
+
+#imageContainer img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+#ajout {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: opacity 0.3s ease;
+}
+
+/* Pop-up */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1001; /* S'assurer que le pop-up est au-dessus des autres éléments */
+}
+
+.popup-content {
+  background: white;
+  padding: 15px; /* Réduit le padding pour rendre le pop-up plus petit */
+  border-radius: 10px;
+  text-align: center;
+  width: 250px; /* Définit une largeur plus petite pour le pop-up */
+  height: auto; /* La hauteur s'ajuste automatiquement au contenu */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Ajouter une légère ombre */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup button {
+  margin-top: 10px;
+  padding: 8px 15px; /* Réduit la taille du bouton */
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #45a049;
+}
+
+
+
+/* Footer */
+footer {
+  background-color: #000000;
+  color: white;
+  padding: 10px;
+  text-align: center; /* Modifié pour être à gauche */
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Animation pour la transition de la question */
+.question-transition {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>Jeu</title>
+  <style>
+    body {
+      background-color: #cacaca;
+    }
+
+    #imageContainer {
+      position: relative;
+      border-width: 10px;
+      justify-content: center;
+
+    }
+
+    #imageContainer img {
+      max-width: 100%;
+      height: 900px;
+      margin-left: -500px;
+    }
+
+    #clickPosition {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 3px;
+    }
+
+    #ajout {
+      display: flex;
+      flex-direction: row;
+      /* Aligner les éléments en ligne (par défaut) */
+      justify-content: flex-end;
+      /* Aligner le texte à droite */
+      align-items: baseline;
+      /* Centrer verticalement les éléments */
+      background-color: #cacaca;
+      background-image: url('stademadrid.JFIF');
+      /* Ajout de l'image en fond */
+      background-size: cover;
+      /* Permet de couvrir toute la zone */
+      background-position: center;
+      /* Centrer l'image */
+      padding: 50px;
+      /* Ajout de rembourrage pour une apparence améliorée */
+      border-radius: 5px;
+      /* Coi ns arrondis */
+      color: rgb(22, 21, 21);
+      /* Espace à gauche de l'élément #ajout */
+      margin-right: -200px;
+    }
+
+    #ajout img {
+      width: 500px;
+      height: 500px;
+      margin: auto;
+      margin-right: -150px;
+      /* Espace à droite de l'image */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bloc_page">
+    <header>
+      <div id="titre_principal">
+        <img src="logomadrid.png" id=terrain alt="terrain" width="200px"/>
+        <h1> Quizz Madrid </h1>
+      </div>
+      <ul>
+        <!-- ajouter une porte vers un autre lien du projet-->
+        Pour selectionersa réponse il est conseillé de viser le visage pour une meilleur precision !
+        Un joueur vous seras proposé , il te suffiras juste de retrouver le joueur sur le terrain.
+
+      </ul>
+
+    </header>
+    <p id="ajout"></p>
+    <div id="imageContainer" style="display: flex">
+      <img 
+      <img src="composition real madrid.jpeg" alt="image superposé" id="stademadrid" />
+      
+      <div id="clickPosition"></div>
+    </div>
+</body>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var imageContainer = document.getElementById('imageContainer');
+    var questions = [['<img src="vinicius.PNG" width="100px">Où se situe vinicius ?', 80, 80],
+    ['<img src="valverde.JFIF">Où se situe valverde ?', 15, 41],
+    ['<img src="courtois.JPG">Où se situe courtois ? ', 50, 9], 
+    ['<img src="rudiger.JPG">Où se situe rudiger ?', 50, 24], 
+    ['<img src="bellingham.JPG">Où se situe bellingham ?', 50, 53], 
+    ['<img src="mbappe.png">Où se situe mbappe ?', 50, 70], 
+    ['<img src="militao.PNG">Où se situe militao ?', 22, 24], 
+    ['<img src="rodrygo.JFIF">Où se situe rodrygo ?', 15, 77], 
+    ['<img src="alaba.JFIF">Où se situe alaba ?', 74, 24], 
+    ['<img src="tchouameni.PNG">Où se situe tchouameni ?', 50, 40], 
+    ['<img src="ldc.PNG">Halla Madrid !']];
+    var num_question = 0;
+    document.getElementById('ajout').innerHTML = questions[num_question][0];
+
+
+    imageContainer.addEventListener('click', function (event) {
+      var image = document.getElementById('image');
+
+      var imageRect = image.getBoundingClientRect();
+
+      // Calculer les coordonnées relatives du clic par rapport à l'image
+      var x = 100 * ((event.clientX - imageRect.left) / image.width);
+      var y = 100 * ((event.clientY - imageRect.top) / image.height);
+
+
+      distance = Math.sqrt(((x - questions[num_question][1]) ** 2) + ((y - questions[num_question][2]) ** 2))
+      if (distance < 4) {
+        alert("vamos !");
+        num_question += 1
+        document.getElementById('ajout').innerHTML = questions[num_question][0];
+      }
+    }
+    );
+  });
+</script>
+
+</html>

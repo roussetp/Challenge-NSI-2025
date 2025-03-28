@@ -1,0 +1,34 @@
+
+body{
+    background-image: url("https://wallpaper.forfun.com/fetch/77/77d2d37a960c365bf76577098d9b7f16.jpeg"); 
+h1{
+  color: white;
+}
+p{
+    color:red ;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+table {
+    border-collapse: collapse;
+  }
+
+  td {
+    width: 50px;
+    height: 50px;
+    border: 0px solid rgb(255, 255, 255);
+    text-align: center;
+    color: white;
+  }
+
+  .case {
+    font-weight: bold;
+    border: 2px solid red;
+    background: rgb(19, 38, 207);
+  }
+  .single-letter-input {
+          width: 30px; /* Ajustez la largeur souhaitée */
+  }
+h2{
+  color: white;
+}

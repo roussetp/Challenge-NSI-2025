@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h1 class="card-title">
+          <title>Mots Croisés</title>
+        </h1>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+      </div>
+    </div>
+  </div>
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #8d99c0c9;
+      color: #2d3748;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    .grille {
+      display: grid;
+      grid-template-columns: repeat(9, 3rem);
+      grid-template-rows: repeat(7, 3rem);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    td {
+      width: 30px;
+      height: 30px;
+      border: 0px solid white;
+      text-align: center;
+    }
+
+    .hints {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 50%; /* Limiter la largeur des indices */
+    }
+
+    .hint-section {
+      width: 48%; /* Chaque section prend environ 48% de la largeur */
+    }
+
+    .hint {
+      padding: 0.75rem;
+      background: #edf2f7;
+      border-radius: 0.25rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+    }
+
+    .case {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.25rem;
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: 2px solid #cbd5e0;
+      border-radius: 0.25rem;
+      background: #e2e8f0;
+      border-color: #3182ce;
+      cursor: pointer;
+    }
+
+    .single-letter-input {
+      width: 20px;
+    }
+
+    footer {
+      background-color: #4a5568;
+      color: #f7fafc;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <h1>Mots Croisés</h1>
+    <table id="grille">
+      <tr> <!--Ligne 1-->
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="case" onclick="editCell(this)"></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td class="case" onclick="editCell(this)"></td>
+        <td class="case" onclick="editCell(this)"></td>
+        <td class="case" onclick="editCell(this)"></td>
+        <td class="case" onclick="editCell(this)"></td>
+        <td class="case" onclick="editCell(this)"></td>
+        <td class="case" onclick="editCell(this)"></td>
+        <td class="case" onclick="editCell(this)"></td>
+        <td class="case" onclick="editCell(this)"></td>
+        <td class="case" onclick="editCell(this)"></td>
+      </tr>
+      <!-- Les autres lignes de la grille sont les mêmes -->
+    </table>
+
+    <!-- Définition des indices en deux colonnes -->
+    <div class="hints">
+      <div class="hint-section">
+        <h3>Indices 1 à 3 :</h3>
+        <p class="hint" id="definition1">1. Jeu de construction cubique créé par Notch</p>
+        <p class="hint" id="definition2">2. Entreprise de jeux et de console japonaise</p>
+        <p class="hint" id="definition3">3. Plombier italien le plus célèbre des jeux vidéos</p>
+      </div>
+      <div class="hint-section">
+        <h3>Indices 4 à 6 :</h3>
+        <p class="hint" id="definition4">4. Arme célèbre des jeux médiévaux</p>
+        <p class="hint" id="definition5">5. Jeu de réflexion de Valve avec des portails</p>
+        <p class="hint" id="definition6">6. Personnage mangeant des points dans un labyrinthe</p>
+      </div>
+    </div>
+  </center>
+
+  <footer>
+    <p>© 2025 Mots Croisés Gaming - Tous droits réservés</p>
+  </footer>
+</body>
+
+<script>
+  // Fonction pour comparer deux tableaux
+  function comparerTableaux(tableau1, tableau2) {
+    if (tableau1.length !== tableau2.length) {
+      return false;
+    }
+    for (var i = 0; i < tableau1.length; i++) {
+      if (tableau1[i].length !== tableau2[i].length) {
+        return false;
+      }
+      for (var j = 0; j < tableau1[i].length; j++) {
+        if (tableau1[i][j] !== tableau2[i][j]) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  function editCell(cell) {
+    // Créer un champ d'entrée de texte
+    var input = document.createElement("input");
+    input.type = "text";
+    input.maxLength = 1; // Limiter la saisie à une seule lettre
+    input.className = "single-letter-input "; // Ajouter une classe pour le style
+
+    // Récupérer le contenu actuel de la cellule
+    var currentContent = cell.innerHTML.trim();
+
+    // Définir la valeur du champ d'entrée de texte comme le contenu actuel de la cellule
+    input.value = currentContent;
+
+    // Ajouter le champ d'entrée de texte à la cellule
+    cell.innerHTML = "";
+    cell.appendChild(input);
+
+    // Mettre le focus sur le champ d'entrée de texte
+    input.focus();
+
+    // Ajouter un gestionnaire d'événements pour détecter la fin de l'édition
+    input.addEventListener("blur", function () {
+      // Valider et mettre à jour le contenu de la cellule avec la valeur du champ d'entrée de texte (en majuscules)
+      var newValue = input.value.toUpperCase();
+      cell.innerHTML = newValue;
+      var grilleCompletee = recupererValeursTableau(); // récupère les valeurs du tableau
+
+      var grilleSolution = [
+        ['', '', '', '', '', '', '', '3', '', ''],
+        ['', '', '', '2', '', '', '', 'M', '', ''],
+        ['1', 'M', 'I', 'N', 'E', 'C', 'R', 'A', 'F', 'T'],
+        ['', '', '', 'I', '', '', '', 'R', '', ''],
+        ['', '', '', 'N', '', '', '', 'I', '', ''],
+        ['', '', '', 'T', '', '', '', 'O', '', ''],
+        ['', '', '4', 'E', 'P', 'E', 'E', '', '', ''],
+        ['', '', '', 'N', '', '', '', '', '', ''],
+        ['', '', '6', 'D', '', '', '', '', '', ''],
+        ['', '5', 'P', 'O', 'R', 'T', 'A', 'L', '', ''],
+        ['', '', 'A', '', '', '', '', '', '', ''],
+        ['', '', 'C', '', '', '', '', '', '', ''],
+        ['', '', 'M', '', '', '', '', '', '', ''],
+        ['', '', 'A', '', '', '', '', '', '', ''],
+        ['', '', 'N', '', '', '', '', '', '', ''],
+      ];
+
+      if (comparerTableaux(grilleSolution, grilleCompletee)) {
+        alert("Trouvé");
+      }
+    });
+  }
+
+  // Fonction pour récupérer les valeurs des cellules
+  function recupererValeursTableau() {
+    var tableau = document.getElementById("grille");
+
+    var valeurs = [];
+
+    for (var i = 0; i < tableau.rows.length; i++) {
+      var valeursLigne = [];
+      for (var j = 0; j < tableau.rows[i].cells.length; j++) {
+        valeursLigne.push(tableau.rows[i].cells[j].innerHTML);
+      }
+      valeurs.push(valeursLigne);
+    }
+
+    return valeurs;
+  }
+</script>
+
+</html>

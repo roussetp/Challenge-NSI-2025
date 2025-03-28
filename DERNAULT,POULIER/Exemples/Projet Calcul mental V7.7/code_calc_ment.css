@@ -1,0 +1,196 @@
+*
+{
+	margin:0;
+	padding:0;
+}
+
+body
+{
+	margin: 0;
+	background: #fff;
+	font-family: "Century Gothic", helvetica, arial, sans-serif;
+	font-size: 1.1em;
+}
+
+#wrapper
+{
+	height:600px;
+	width:80%;
+	margin:35px auto;
+	border: px solid black;
+	/*background-color:#fff;*/
+	display:flex;
+	flex-direction:column;
+}
+
+header
+{
+ 	background-color:;
+ 	height:28%;
+ 	padding:px;
+ 	display:flex;
+ 	flex-direction:row;
+ 	/*flex-wrap:wrap;*/
+ 	justify-content:space-around; /* gestion des espaces sur l'axe principal*/
+ 	align-items:center;
+}
+ 
+.he2
+{
+	/*flex-grow:2;*/
+	padding:10px;	
+}
+
+
+ 
+section
+{
+ 	display:flex;
+ 	flex-direction:row;
+ 	#flex-wrap:nowrap;
+ 	height:60%;
+}
+ 
+#art1
+{
+ background-color:orange;
+ width:200px; 
+ border: px solid black;
+ padding: 5px;
+}
+
+#center
+{
+	text-align:center;
+	vertical-align: middle;
+}
+
+.score
+{
+	 margin-left: 30px;
+	 line-height:2;
+	 text-align:center;
+}
+ 
+.niveaux
+{
+	margin-top:-5px; 
+	display:flex;
+	flex-direction:column;
+ 	#flex-wrap:nowrap;
+ 	height:60%;	 
+ }
+ 
+#n1,#n2,#n3
+{
+    border:2px solid blue;
+	margin-bottom:5px;
+    line-height: 2;
+    
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+#art2
+{
+ 	background-color:purple; 
+ 	border:px solid black;
+ 	flex-grow:1;
+}
+#page2
+{
+ 	font-size: 2em;
+ 	color: black;
+}
+#page3
+{
+ 	color: black;
+}
+#n4
+{
+	background-color:orange;
+	border:2px solid blue;
+	margin-bottom:5px;
+	padding:5px;
+    line-height:1;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(255, 201,51, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+} 
+ 
+footer
+{
+ 	background-color:grey;
+ 	border: px solid black;
+ 	height:90px;
+ 	vertical-align: middle;
+ }
+ 
+header
+{
+	background: dodgerblue;
+	text-align: center;
+}
+
+header,section,article,footer
+{
+	padding:0px;
+	margin:2px;
+	/*border:2px solid #fff;*/
+	border-radius:10px;
+	color: #fff;
+}
+
+#par1
+{
+	color:black;
+	width:80px;
+	background-color: white;
+}
+
+#par3
+{
+	color:black;
+	font-size: 1.4em;
+	width:auto;
+	background-color: white;
+}
+#message
+{
+	color:black;
+	font-size: 1.2em;
+	width:150px;
+	/*background-color: white;*/
+}
+#resultat_propose
+{
+	color:black;
+	font-size: 1.2em;
+	width:100px;
+	background-color: white;
+}
+#tempsRestant
+{
+	color:black;
+	font-size: 1.5em;
+	width:400px;
+	background-color: grey;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Styles pour le conteneur parent et les images restent inchangés */
+    .image-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    #image1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #image2 {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 50%;
+      height: 50%;
+      opacity: 1; /* Opacité initiale à 100% (complètement opaque) */
+      transition: opacity 0.5s ease-in-out; /* Ajout d'une transition pour une animation en douceur */
+     
+    }
+  </style>
+</head>
+<body>
+  <button type="button" onclick="afficher()">Afficher objet</button>
+  <button type="button" onclick="cacher()">Cacher objet</button>
+  <div class="image-container">
+    <img id="image1" src="image1.jpg" alt="Image 1">
+    <img id="image2" src="image2.png" alt="Image 2">
+  </div>
+
+  <script>
+    // Récupérer l'élément de l'image 2
+    var image2 = document.getElementById('image2');
+    var positionTop;
+    var positionLeft;
+
+    function afficher()
+    {
+      positionTop = '100px';
+      positionLeft = '100px';
+      document.getElementById('image2').style.top = positionTop;
+      document.getElementById('image2').style.left = positionLeft;
+      image2.style.opacity = 1; // Image visible
+    }
+    function cacher()
+    {
+      image2.style.opacity = 0; // Image invisible
+    }
+  </script>
+
+</body>
+</html>

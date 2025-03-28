@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title> Calcul mental</title>
+		<link rel= "stylesheet" type="text/css" href="code_calc_ment.css"/>
+		<link rel="icon" type="image/png" href="images/logo.png" />
+		<script src="code_calc_ment.js"> </script>
+    </head>
+    <body>
+		<div id="wrapper">
+			<header>
+				<!--<div class="he1"><img src="http://www.campingcar18club.fr/medias/images/ameublement-ampoules-4.gif"/></div>-->
+				<div class="he1"><img src="images/cerveau_musc.gif"/></div>
+				<div Class="he2">
+					<h2>LE CALCUL MENTAL pour élève en NSI<BR/>LA GYMNASTIQUE DU CERVEAU</h2>
+				<!--<img src="http://www.gif-anime.org/im/gif/corps/cerveau/cerveau4.gi" />-->
+				</div> 
+				<!--<div class="he3"><img src="../images/cerveau_meca.gif"/></div>-->
+				<!--<div class="he3"><img src="http://storage.canalblog.com/70/65/18343/11618378.gif"/></div>-->
+			</header>
+			<section>
+			<article id="art1">
+				<h1 id="center">Choix du type de calcul</h1>
+				<div class="niveaux">
+					​<button id="n1" onclick="niveau1()" title="Addition, soustraction, multiplication et division en décimal">Calcul arithmétique en décimal</button>
+					<button id="n2" onclick="niveau2()" title="Algèbre de Boole avec les opérateurs OU et ET">Calcul logique</button>
+					<button id="n3" onclick="niveau3()" title="Conversion d'une base vers une autre (Décimale, binaire ou Hexadécimale)">Conversion</button>
+
+					<button class="identif" onclick="identif()" title="Accès à l'identification ou inscription facultative">Identifie-toi</button>
+					<button class="identif" onclick="classement()" title="Accès au tableau de classement">Classement</button>
+					<p id="tonScoreMax"></p>
+				</div>
+
+			</article>
+			
+			<article id="art2">
+			<center>
+			<div  id="page1">
+				<p id="tempsRestant"></p>
+				<br/>
+				<br/>
+				<p id="par1"> </p>				
+				<p id="par3"> </p>
+				<p id="par4"> </p>				
+				<br/>
+				<p id="message">Ta réponse :</p><input class="" type="text" size="8" id="resultat_propose" name="resultat_propose"/>
+				<button id="n4" onclick="verification()">Valider</button><br/>
+				<br/>
+				<p id="par5"> </p>
+				<br/>
+				<p id="par6"> </p>
+				<br/>
+				<p id="par7"> </p>
+			</div>
+			<div id="page2">
+				<br/>
+				<input class="" type="text" size="20" id="pseudo" name="pseudo" style="font-size:1em;"/>
+				<button id="valid" onclick="valideSpeudo()" style="font-size:1em;">Valide ton pseudo</button><br/>
+			</div>
+			<div id="page3">			
+				<table style="background-color:white;">
+  					<tr>
+       					<td><b>Classement  /</td>
+       					<td><b>Pseudo  /</span></td>
+       					<td><b>Score  </td>
+   					<tr style="background-color:gold;">
+       					<td>1er : </td>
+       					<td><span id="pseudo1"></span></td>
+       					<td><span id="score1"></td>
+   					</tr>
+   					<tr style="background-color:silver;">
+      		 			<td>2ème : </td>
+      		 			<td><span id="pseudo2"></span></td>
+       					<td><span id="score2"></td>
+   					</tr>
+   					<tr style="background-color:#CD7F32;">
+      		 			<td>3ème : </td>
+      		 			<td><span id="pseudo3"></span></td>
+       					<td><span id="score3"></td>
+   					</tr>
+   					<tr>
+      		 			<td>4ème : </td>
+      		 			<td><span id="pseudo4"></span></td>
+       					<td><span id="score4"></td>
+   					</tr>
+   					<tr>
+      		 			<td>5ème : </td>
+      		 			<td><span id="pseudo5"></span></td>
+       					<td><span id="score5"></td>
+   					</tr>
+   					<tr>
+      		 			<td>6ème : </td>
+      		 			<td><span id="pseudo6"></span></td>
+       					<td><span id="score6"></td>
+   					</tr>
+   					<tr>
+      		 			<td>7ème : </td>
+      		 			<td><span id="pseudo7"></span></td>
+       					<td><span id="score7"></td>
+   					</tr>
+   					<tr>
+      		 			<td>8ème : </td>
+      		 			<td><span id="pseudo8"></span></td>
+       					<td><span id="score8"></td>
+   					</tr>
+   					<tr>
+      		 			<td>9ème : </td>
+      		 			<td><span id="pseudo9"></span></td>
+       					<td><span id="score9"></td>
+   					</tr>
+   					<tr>
+      		 			<td>10ème : </td>
+      		 			<td><span id="pseudo10"></span></td>
+       					<td><span id="score10"></td>
+   					</tr>
+   					<br/>
+				</table>
+				<button id="valid" onclick="retour()">Retour page principale</button><br/>
+			</div>
+				</center>
+			</article>
+			
+			</section>
+			<footer>
+				<h4 id="center"><span style="text-decoration: underline;"> Régle du jeu</span> : Après avoir choisi le type de calcul, tu dois trouver le maximum de résultat en moins d'une minute. Bonne chance !</h4>
+				<br/>
+				<center>Volume sonore : <span><input id="volumeSonore" type="range" min="0" max="10" name="volume"></span></center>
+			
+			</footer>
+			
+		
+	
+		</div>
+		<script type="text/javascript">
+			document.getElementById('page2').style.display="none";
+			document.getElementById('page3').style.display="none";
+			document.getElementById('n4').style.visibility="hidden";
+			document.getElementById('resultat_propose').style.visibility="hidden";
+			document.getElementById('message').style.visibility="hidden";
+			var volumeSonore=document.getElementById("volumeSonore");
+			volumeSonore.oninput=function(){output.innerHTML=this.value;alert("test");};
+		</script>
+    </body>
+</html> 
+
+<!-- input: https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input-->

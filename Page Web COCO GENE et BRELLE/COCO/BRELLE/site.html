@@ -1,0 +1,188 @@
+<!--20/20 Très beau travail bien pensé ! Félicitations -->
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>ES1 Thème D</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Mots Croisés</h1>
+        <p>Complétez les mots croisés sur les Maldives !</p>
+        <section class="grille">
+            <h2>Grille de Mots Croisés</h2>
+            <table id="grille">
+                <tr> <!--Ligne 1-->
+                    <td></td> <!--Case 1 de la ligne 1-->
+                    <td></td>
+                    <td></td>
+                    <td>2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td class="case" onclick="editCell(this)"></td>
+                    <td class="case" onclick="editCell(this)"></td>
+                    <td class="case" onclick="editCell(this)"></td>
+                    <td class="case" onclick="editCell(this)"></td>
+                    <td class="case" onclick="editCell(this)"></td>
+                    <td class="case" onclick="editCell(this)"></td>
+                    <td class="case" onclick="editCell(this)"></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="case" onclick="editCell(this)"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="case" onclick="editCell(this)"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>3</td>
+                    <td class="case" onclick="editCell(this)"></td>
+                    <td class="case" onclick="editCell(this)"></td>
+                    <td class="case" onclick="editCell(this)"></td>
+                    <td class="case" onclick="editCell(this)"></td>
+                    <td class="case" onclick="editCell(this)"></td>
+                    <td class="case" onclick="editCell(this)"></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="case" onclick="editCell(this)"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                  
+               </table>
+              
+                <div id="INDICE">
+                  <h2> INDICE :</h2>
+                  <p id="INDICE">1.Symbole national des Maldives, avec une couleur rouge et verte.</p>
+                  <p id="dINDICE2">2.Formation géologique en forme d'anneau entourant un lagon.</p>
+                  <p id="INDICE3">3. Étendue d'eau peu profonde séparée de la mer par un banc de sable ou un récif.</p>
+                   </div>
+              </body>
+              <script>
+                // Fonction pour comparer deux tableaux
+                function comparerTableaux(tableau1, tableau2) {
+                    if (tableau1.length !== tableau2.length) {
+                        return false;
+                    }
+                    for (var i = 0; i < tableau1.length; i++) {
+                      if (tableau1[i].length !== tableau2[i].length) {
+                          return false;
+                      }
+                      for (var j = 0; j < tableau1[i].length; j++) {
+                          if (tableau1[i][j] !== tableau2[i][j]) {
+                              return false;
+                          }
+                      }
+                    }
+                    return true;
+                }
+              
+                function editCell(cell) {
+                  // Créer un champ d'entrée de texte
+                  var input = document.createElement("input");
+                  input.type = "text";
+                  input.maxLength = 1; // Limiter la saisie à une seule lettre
+                  input.className = "single-letter-input "; // Ajouter une classe pour le style
+              
+                  // Récupérer le contenu actuel de la cellule
+                  var currentContent = cell.innerHTML.trim();
+              
+                  // Définir la valeur du champ d'entrée de texte comme le contenu actuel de la cellule
+                  input.value = currentContent;
+              
+                  // Ajouter le champ d'entrée de texte à la cellule
+                  cell.innerHTML = "";
+                  cell.appendChild(input);
+              
+                  // Mettre le focus sur le champ d'entrée de texte
+                  input.focus();
+              
+                  // Ajouter un gestionnaire d'événements pour détecter la fin de l'édition
+                  input.addEventListener("blur", function () {
+                      // Valider et mettre à jour le contenu de la cellule avec la valeur du champ d'entrée de texte (en majuscules)
+                      var newValue = input.value.toUpperCase();
+                      cell.innerHTML = newValue;
+                      var grilleCompletee = recupererValeursTableau(); // récupère les valeurs du tableau
+                      //console.log(grilleCompletee); // affiche dans la console
+              
+                      var grilleSolution = [
+                              ['', '', '', '2', '', '', '', ''],
+                              ['1', 'D', 'R', 'A', 'E', 'A', 'U'],
+                              ['', '', '', 'T', '', '', '', ''],
+                              ['', '', '', 'O', '', '', '', ''],
+                              ['', '', '3', 'L', 'A', 'G', 'U', 'N','E'],
+                                                  ];
+                      //alert(grille)
+                      //alert(grilleCompletee)
+                      if (comparerTableaux(grilleSolution, grilleCompletee)) {
+                        alert("Trouvé");
+                      }
+                  });
+                }
+              
+                    // Fonction pour récupérer les valeurs des cellules
+                    function recupererValeursTableau() {
+                      // Récupérer le tableau par son identifiant
+                      var tableau = document.getElementById("grille");
+              
+                      // Initialiser un tableau pour stocker les valeurs
+                      var valeurs = [];
+              
+                      // Parcourir les lignes du tableau
+                      for (var i = 0; i < tableau.rows.length; i++) {
+                          // Initialiser un tableau pour stocker les valeurs de la ligne actuelle
+                          var valeursLigne = [];
+              
+                          // Parcourir les cellules de la ligne actuelle
+                          for (var j = 0; j < tableau.rows[i].cells.length; j++) {
+                              // Ajouter la valeur de la cellule au tableau
+                              valeursLigne.push(tableau.rows[i].cells[j].innerHTML);
+                          }
+              
+                          // Ajouter le tableau de valeurs de la ligne au tableau principal
+                          valeurs.push(valeursLigne);
+                      }
+              
+                      return valeurs;
+                  }
+              </script>
+              </html>
+              
+                
+
+   
+    <div class="bouton_fin">
+        <p>
+             <a href="CORRIGE.html">CORRIGER</a>
+       </p>
+    </div>
+</body>
+</html>

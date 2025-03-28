@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Informatique & composition musicale</title>  <!--Titre du sujet globale-->
+        <link rel="stylesheet" href="style.css"> 
+	</head>
+    <body>
+		<h1>Quelle est la liaison entre l'IA et la composition musicale ?</h1> <!--Titre du sujet ci-dessous-->
+		<img src="IA.png" title="IA" class= "center"/>
+            <p>L’IA fait son entrée dans l’univers de la création musicale.
+			L’intelligence artificielle excelle déjà à créer des paysages sonores et
+			des ambiances sonores. Des services comme Spotify, Amazon Music ou Google Music 
+            adaptent les playlists à votre humeur ou aux ambiances que vous voulez créer.
+        	</p>
+
+            <p>Le lien entre les <u>deux disciplines</u> ne date pas d’hier. En 1956, les
+             américains Lejaren Hiller et Leonard Issacson dévoilaient déjà Illiac Suite,
+             la première composition musicale réalisée par une machine. Bien que rudimentaire, 
+             cette œuvre inspirée du répertoire de Bach a révolutionné la façon de concevoir 
+             la création musicale que vous voulez créer.
+            </p> 
+		</ul>
+
+		<button onclick="afficherConclusion ()" title="Conclusion">Afficher Conclusion</button> <!--Fonction pour afficher la conclusion-->
+		<div id="conclusion"> 
+			<p>En conclusion, il existe différent types l’Intelligence Artificielle dont une qui 
+		   		reproduit le système nerveux et qui permettra dans un avenir proche de réaliser
+		   		de la musique en remplaçant les chanteurs ou chanteuses.  
+			</p>
+			<button onclick="cacherConclusion()" title="Cacher">Cacher Conclusion</button> <!--Fonction pour cacher la conclusion-->
+		</div>
+        <p> VOICI UN PETIT QUIZZ !</p> <!--Le quizz bilan-->      
+		<form name="form_qz"> <!--Le nom du quizz-->
+			<p>Ou apparait l'IA? :</p>
+			<ol>
+				<li><input type="radio" name="choix_rep_0" value="0">dans le chant</li>              
+				<li><input type="radio" name="choix_rep_0" value="1">dans l'univers musicale</li>             
+				<li><input type="radio" name="choix_rep_0" value="0">dans les studios de musique</li>
+			</ol>    
+			
+			<ol><p>La signification de l'IA est :</p>
+				<li><input type="checkbox" name="choix_rep_1" value="0">informatique améliorer</li>             
+				<li><input type="checkbox" name="choix_rep_1" value="0.5">artificial intelligence</li>             
+				<li><input type="checkbox" name="choix_rep_1" value="0.5">intelligence artificielle</li>
+			</ol>
+				
+			<ol><p>Dans quelle(s) service(s) peut-on retrouver de l'IA ? :</p> 
+				<li><input type="radio" name="choix_rep_2" value="-1">facebook</li>
+				<li><input type="radio" name="choix_rep_2" value="1">spotify</li>
+				<li><input type="radio" name="choix_rep_2" value="-1">google</li>
+			</ol>
+			
+			<ol><p>Remplace quoi ? :</p> 
+				<li><input type="radio" name="choix_rep_3" value="0">les musiciens</li>
+				<li><input type="radio" name="choix_rep_3" value="0">les studios de musique</li>
+				<li><input type="radio" name="choix_rep_3" value="1">les chanteurs(euse)</li>
+			</ol>
+	
+			<ul><p>Combien d'intelligence artificielle existe t-il ? :</p>
+				<li><input type="radio" name="choix_rep_4" value="1">plusieurs</li>
+				<li><input type="radio" name="choix_rep_4" value="0">5</li>
+				<li><input type="radio" name="choix_rep_4" value="0">0</li>
+			</ul>
+			
+			<p>le nombre de réponses correctes est :</p>
+			<p><input type="button" name="btnAfficher" value="afficher le reslultat" onclick="calcul();"></p>
+			<p><input type="text" name="txtNb" id="resultat"></p>
+		</form>>
+    </body>
+	<script> 
+	    document. querySelector('#conclusion').style.visibility="hidden";
+		function afficherConclusion()
+		{
+		    document.querySelector('#conclusion').style.visibility="visible";
+		}
+		function cacherConclusion()
+		{
+		    document.querySelector('#conclusion').style.visibility="hidden";
+		}
+
+		function calcul()
+		{
+		   	nombreDeQuestion=10;
+		   	nom=new Array();
+		   	nomLength=new Array();
+		   	point=0;
+		   	for(n=0;n<=(nombreDeQuestion-1);n++)
+		   	{
+			  	nom[n]=document.getElementsByName("choix_rep_"+n);
+			  	nomLength[n]=nom[n].length;
+			  	for(q=0;q<=(nomLength[n]-1);q++)
+			  	{
+					if(nom[n][q].checked==true)
+					{point=point+eval(nom[n][q].value);} 
+					else
+					{point=point;}
+		
+			  	}       
+		   	}
+		   	document.form_qz.txtNb.value=point;
+	    }
+    </script>	
+</html>
+		
+
+            
+        
+           
+
+
+             
+            
+      

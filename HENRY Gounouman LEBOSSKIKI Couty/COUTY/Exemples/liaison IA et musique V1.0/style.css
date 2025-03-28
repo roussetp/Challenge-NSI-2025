@@ -1,0 +1,27 @@
+body /* Propriétés générales */
+{
+    color:red; /* Texte en noir */
+    background-image: url("Fond_de_page.jpg");
+    
+}
+p /* Paramètres des paragraphes */
+{
+    color:black; /* Le texte sera noir */	
+	font-size:20px; /* Taille du texte de 20 pixels*/
+}
+h1,h2 /* Paramètres des titres de niveau 1 et 2 */
+{
+	text-align:center; /* Alignement est le mode centré */
+}
+li /* Paramètres des puces */
+{
+	font-weight:bold; /* Texte en gras */
+}
+
+.center
+{
+    display: block;
+	margin-left: auto; 
+    margin-right: auto;
+}
+

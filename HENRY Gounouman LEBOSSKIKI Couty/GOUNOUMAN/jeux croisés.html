@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mots Croisés</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+    }
+
+    .case {
+      font-weight: bold;
+      border: 2px solid rgb(255, 0, 0);
+      background: rgb(70, 17, 194);
+    }
+
+    .single-letter-input {
+      width: 20px;
+      text-transform: uppercase;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mots Croisés</h1>
+  <table id="grille">
+    <tr>
+      <td></td>
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td></td>
+    </tr>
+    
+    <tr>
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td></td>
+    </tr>
+    
+    <tr>
+      <td></td>
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td class="case" onclick="editCell(this)"></td> 
+      <td></td>
+    </tr>
+  </table>
+
+  <div id="definition">
+    <h2>Définitions :</h2>
+    <p id="definition1">1. Un joueur légendaire du football portugais, surnommé "CR7".</p>
+    <p id="definition2">2. Un ancien joueur espagnol, célèbre pour son passage au Real Madrid.</p>
+    <p id="definition3">3. Un prénom italien populaire, également le nom d'un personnage de cuisine.</p>
+  </div>
+
+  <button id="verifierButton" onclick="verifierGrille()">Vérifier</button>
+
+  <div id="message"></div>
+
+  <script>
+    function comparerTableaux(tableau1, tableau2) {
+      if (tableau1.length !== tableau2.length) {
+        return false;
+      }
+      for (var i = 0; i < tableau1.length; i++) {
+        if (tableau1[i].length !== tableau2[i].length) {
+          return false;
+        }
+        for (var j = 0; j < tableau1[i].length; j++) {
+          if (tableau1[i][j] !== tableau2[i][j]) {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
+    function editCell(cell) {
+      var input = document.createElement("input");
+      input.type = "text";
+      input.maxLength = 1; 
+      input.className = "single-letter-input";
+
+      var currentContent = cell.innerHTML.trim();
+      input.value = currentContent;
+
+      cell.innerHTML = "";
+      cell.appendChild(input);
+
+      input.focus();
+
+      input.addEventListener("blur", function () {
+        var newValue = input.value.toUpperCase();
+        cell.innerHTML = newValue;
+      });
+    }
+
+    function recupererValeursTableau() {
+      var tableau = document.getElementById("grille");
+      var valeurs = [];
+      for (var i = 0; i < tableau.rows.length; i++) {
+        var valeursLigne = [];
+        for (var j = 0; j < tableau.rows[i].cells.length; j++) {
+          var cell = tableau.rows[i].cells[j];
+          if (cell.classList.contains("case")) {
+            valeursLigne.push(cell.innerHTML.trim().toUpperCase());
+          } else {
+            valeursLigne.push("");
+          }
+        }
+        valeurs.push(valeursLigne);
+      }
+      return valeurs;
+    }
+
+    function verifierGrille() {
+      var grilleCompletee = recupererValeursTableau();
+      var grilleSolution = [
+        ["", "R", "O", "N", "A", "L", "D", "O", ""],
+        ["R", "A", "U", "L", "", "", "", ""],
+        ["", "A", "L", "F", "R", "E", "D", "O", ""],
+      ];
+
+      var message = document.getElementById("message");
+
+      if (comparerTableaux(grilleCompletee, grilleSolution)) {
+        message.textContent = "Bravo ! Tu as trouvé les mots croisés !";
+        message.style.color = "green";
+      } else {
+        message.textContent = "Désolé, tu n'as pas trouvé les mots croisés. Essaie encore !";
+        message.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
+
+

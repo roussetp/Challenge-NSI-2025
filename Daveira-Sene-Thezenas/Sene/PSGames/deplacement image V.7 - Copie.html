@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Jeu de placement d'image</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    .grille {
+      background-image: -webkit-image-set("terrain de football10.png");
+      display: grid;
+      grid-template-columns: repeat(5, 170px);
+      grid-template-rows: repeat(5, 170px);
+      gap: 1px;
+      border: 1px solid none;
+    }
+
+    .cellule {
+      border: 1px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative; /* Pour bien positionner les ronds blancs */
+    }
+
+    .rond-blanc {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .joueur {
+      width: 150px;
+      height: 150px;
+      cursor: grab;
+    }
+
+    .joueurs-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="grille">
+    <!-- Génération automatique des cellules avec JavaScript -->
+  </div>
+
+  <div class="joueurs-container">
+    <img id="joueur1" class="joueur" src="Barcola.png" alt="HERNANDEZ" draggable="true">
+    <img id="joueur2" class="joueur" src="Neves.png" alt="NEVES" draggable="true">
+    <img id="joueur3" class="joueur" src="Kvara.png" alt="DOUE" draggable="true">
+    <img id="joueur4" class="joueur" src="Mendes.png" alt="MENDES" draggable="true">
+    <img id="joueur5" class="joueur" src="Dembele.png" alt="DEMBELE" draggable="true">
+    <img id="joueur6" class="joueur" src="Hakimi.png" alt="HAKIMI" draggable="true">
+    <img id="joueur7" class="joueur" src="patcho.png" alt="PATCHO" draggable="true">
+    <img id="joueur8" class="joueur" src="Marqui.png" alt="MARQUI" draggable="true">
+    <img id="joueur9" class="joueur" src="Donnarumma.png" alt="DONNARUMMA" draggable="true">
+    <img id="joueur10" class="joueur" src="Fabian.png" alt="FABIAN" draggable="true">
+    <img id="joueur11" class="joueur" src="Vitninhia.png" alt="VITNINHIA" draggable="true">
+  </div>
+
+  <script>
+    const grille = document.querySelector('.grille');
+
+    // Génération de la grille (5x5)
+    for (let y = 0; y < 5; y++) {
+      for (let x = 0; x < 5; x++) {
+        const cellule = document.createElement('div');
+        cellule.classList.add('cellule');
+        cellule.dataset.x = x;
+        cellule.dataset.y = y;
+        grille.appendChild(cellule);
+      }
+    }
+
+    const joueurs = document.querySelectorAll('.joueur');
+    const cellules = document.querySelectorAll('.cellule');
+
+    let positionsCorrectes = {
+      joueur1: { x: 1, y: 1 },
+      joueur2: { x: 1, y: 3 },
+      joueur3: { x: 1, y: 2 },
+      joueur4: { x: 3, y: 3 },
+      joueur5: { x: 2, y: 0 },
+      joueur6: { x: 3, y: 4 },
+      joueur7: { x: 0, y: 4 },
+      joueur8: { x: 2, y: 4 },
+      joueur9: { x: 2, y: 5 },
+      joueur10: { x: 3, y: 1 },
+      joueur11: { x: 3, y: 2 },
+    };
+
+    joueurs.forEach(joueur => {
+      joueur.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', joueur.id);
+      });
+    });
+
+    cellules.forEach(cellule => {
+      cellule.addEventListener('dragover', (e) => {
+        e.preventDefault();
+      });
+
+      cellule.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const id = e.dataTransfer.getData('text/plain');
+        const draggedJoueur = document.getElementById(id);
+
+        const x = parseInt(cellule.dataset.x);
+        const y = parseInt(cellule.dataset.y);
+
+        if (positionsCorrectes[id].x === x && positionsCorrectes[id].y === y) {
+          alert('Bonne réponse pour ' + draggedJoueur.alt + ' !');
+          cellule.appendChild(draggedJoueur);
+          draggedJoueur.style.cursor = 'default';
+          draggedJoueur.draggable = false;
+
+          // 🔴 Supprimer le rond blanc si un joueur est placé correctement
+          let rond = cellule.querySelector('.rond-blanc');
+          if (rond) {
+            cellule.removeChild(rond);
+          }
+        } else {
+          alert('Mauvaise réponse pour ' + draggedJoueur.alt + '. Essayez encore !');
+        }
+      });
+    });
+
+    // 🔵 Ajout des ronds blancs à certaines cellules spécifiques
+    let cellulesAvecRond = [
+      { x: 0, y: 0 },
+      { x: 1, y: 2 },
+      { x: 2, y: 3 },
+      { x: 3, y: 1 },
+      { x: 1, y: 4 }
+    ];
+
+    document.querySelectorAll('.cellule').forEach(cellule => {
+      let x = parseInt(cellule.dataset.x);
+      let y = parseInt(cellule.dataset.y);
+
+      if (cellulesAvecRond.some(c => c.x === x && c.y === y)) {
+        let rond = document.createElement('div');
+        rond.classList.add('rond-blanc');
+        cellule.appendChild(rond);
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>
+

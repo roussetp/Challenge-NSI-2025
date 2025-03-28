@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Identification de la position du clic</title>
+  <style>
+    #imageContainer {
+      position: relative;
+    }
+    #imageContainer img {
+      max-width: 100%;
+      height: auto;
+    }
+    #clickPosition {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="imageContainer" style="position: relative;">
+    <img src="coeffin.jpg" alt="Coeffin" id="image" style="display: block; max-width: 100%;" />
+  </div>
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var imageContainer = document.getElementById('imageContainer');
+
+    imageContainer.addEventListener('click', function(event) {
+      var image = document.getElementById('image');
+
+      // Obtenir la position de l'image par rapport au coin supérieur gauche de la page
+      var imageRect = image.getBoundingClientRect();
+
+      // Calculer les coordonnées relatives du clic par rapport à l'image
+      var xRelative = 100 * ((event.clientX - imageRect.left) / image.width);
+      var yRelative = 100 * ((event.clientY - imageRect.top) / image.height);
+
+      alert('Position du clic par rapport à l\'image : x = ' + xRelative + ', y = ' + yRelative);
+    });
+  });
+</script>
+
+</html>

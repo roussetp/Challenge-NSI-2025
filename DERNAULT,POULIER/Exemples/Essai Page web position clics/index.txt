@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Identification de la position du clic</title>
+  <style>
+    #imageContainer {
+      position: relative;
+    }
+    #imageContainer img {
+      max-width: 100%;
+      height: auto;
+    }
+    #clickPosition {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="imageContainer">
+    <img src="chemin/vers/votre/image.jpg" alt="Votre image" id="image" />
+    <div id="clickPosition"></div>
+  </div>
+
+  <script src="votre_script.js"></script>
+</body>
+</html>

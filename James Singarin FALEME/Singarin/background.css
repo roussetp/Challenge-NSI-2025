@@ -1,0 +1,11 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('images/background.png'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-attachment: fixed;  
+    color: #fff;  
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}

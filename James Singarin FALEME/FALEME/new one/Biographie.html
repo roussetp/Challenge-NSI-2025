@@ -1,0 +1,160 @@
+<!--16/20 Beau travail perfectible (on arrive sur la page sans savoir quoi faire, c'est plages ou  rivières, vous auriez pû y ajouter des images
+de l'audio description etc.). Curieux nom au fichier. Attitude au travail à revoir en classe-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Explore the stunning beaches and rivers of Guadeloupe with an interactive map. Discover the best outdoor locations to visit.">
+    <title>Carte interactive de la Guadeloupe</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="nav-bar h1">
+		<div class="nav-bar-img">
+			<img src="images/avatar.png" alt="">
+          <h1>Guadeloupe</h1>
+      </div>
+        <div class="nav-bar-liens">
+            <ul>
+                <li><a href="\\w050335\- PROJET SITE WEB\James Singarin FALEME\Singarin\Gwada.html">HOME-QUIZ</a></li>
+                <li><a href="\\w050335\- PROJET SITE WEB\James Singarin FALEME\James\1index.html">ACTIVITE</a></li>
+                <li><a href="\\w050335\- PROJET SITE WEB\James Singarin FALEME\FALEME\new one\Biographie.html">PLAGE-RIVIERE</a></li>
+            </nav>
+            </ul>
+          </div>
+
+    <div id="mapid"></div>
+
+    <div class="section">
+        <h2>Plages et Rivières</h2>
+        <p>Découvrez les lieux incontournables de la Guadeloupe avec des informations utiles sur chaque site.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Explorez la Guadeloupe | <a href="https://www.openstreetmap.org/copyright" target="_blank" style="color: white;">OpenStreetMap contributors</a></p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Initialisation de la carte
+        var map = L.map('mapid').setView([16.995, -61.551], 10); // Coordonnées centrées sur la Guadeloupe
+
+        // Carte de fond
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Ajouter des points de repère pour les plages et rivières
+        var plages = [
+            { 
+                name: "Plage de Sainte-Anne", 
+                lat: 16.2224226, 
+                lng: -61.390, 
+                description: "Plage idéale pour se détendre. Cette plage est l'une des plus populaires de l'île. Connue pour son sable blanc fin et ses eaux cristallines, elle est idéale pour les moments de détente et les baignades. C'est un lieu parfait pour profiter d'une journée tranquille sous le soleil, avec de nombreuses commodités à proximité pour le confort des visiteurs." 
+            },
+            { 
+                name: "Plage de Grande-Anse", 
+                lat: 16.3222770, 
+                lng: -61.7880930, 
+                description: "Plage tranquille pour profiter du soleil. La Plage de Grande-Anse est une grande étendue de sable bordée par des cocotiers. C'est un endroit paisible où les visiteurs peuvent se prélasser et profiter de la beauté de la mer des Caraïbes. L'eau y est calme, propice à la baignade et aux activités nautiques." 
+            },
+    { 
+        name: "Plage de Sainte-Anne", 
+        lat: 16.2224226, 
+        lng: -61.390, 
+        description: "Plage idéale pour se détendre. Cette plage est l'une des plus populaires de l'île. Connue pour son sable blanc fin et ses eaux cristallines, elle est idéale pour les moments de détente et les baignades. C'est un lieu parfait pour profiter d'une journée tranquille sous le soleil, avec de nombreuses commodités à proximité pour le confort des visiteurs." 
+    },
+    { 
+        name: "Plage de Grande-Anse", 
+        lat: 16.3222770, 
+        lng: -61.7880930, 
+        description: "Plage tranquille pour profiter du soleil. La Plage de Grande-Anse est une grande étendue de sable bordée par des cocotiers. C'est un endroit paisible où les visiteurs peuvent se prélasser et profiter de la beauté de la mer des Caraïbes. L'eau y est calme, propice à la baignade et aux activités nautiques." 
+    },
+    { 
+        name: "Plage de la Caravelle", 
+        lat: 16.3031605, 
+        lng: -61.5343055, 
+        description: "Une plage magnifique pour les familles et les amoureux de la nature. La plage est bordée de végétation tropicale et l'eau y est calme. Idéale pour les baignades et les activités nautiques." 
+    },
+    { 
+        name: "Plage de Malendure", 
+        lat: 16.1721382, 
+        lng: -61.7766779, 
+        description: "Plage prisée des amateurs de plongée sous-marine. La Plage de Malendure est un endroit parfait pour explorer la faune marine et les récifs coralliens. Elle offre également un cadre idyllique pour une journée de détente en bord de mer." 
+    },
+    { 
+        name: "Plage de Bois Jolan", 
+        lat: 16.2361520, 
+        lng: -61.3520821, 
+        description: "Un coin tranquille pour se détendre, loin des foules. La plage est entourée d'une végétation dense et offre une eau cristalline. Parfaite pour les amateurs de plage paisible." 
+    }
+
+        ];
+
+        var rivières = [
+            { 
+                name: "Plage du Grand Cul-de-Sac Marin", 
+                lat: 16.3405661, 
+                lng: -61.5268875, 
+                description: "Plage propice à l'aventure. Cette Plage traverse la région du Grand Cul-de-Sac Marin et est un lieu incontournable pour les amoureux de la nature. En plus d'être un spot pour les activités de kayak et de randonnée, la plage est un paradis pour l'observation de la faune et de la flore locales. Elle abrite aussi un écosystème unique qui mérite d'être découvert." 
+            },
+            { 
+                name: "Rivière ecrevisse", 
+                lat: 16.1789802, 
+                lng: -61.6806599, 
+                description: "Rivière idéale pour les amateurs de nature. Sur l'île de la Basse-Terre, cette rivière est un petit bijou naturel. Elle est entourée de végétation luxuriante et d'une biodiversité impressionnante, ce qui en fait un lieu idéal pour les excursions et les randonnées. La rivière est également propice à l'exploration en kayak pour ceux qui cherchent à vivre une aventure authentique au cœur de la nature." 
+            },
+            {
+        name: "Plage du Grand Cul-de-Sac Marin", 
+        lat: 16.3405661, 
+        lng: -61.5268875, 
+        description: "Plage propice à l'aventure. Cette Plage traverse la région du Grand Cul-de-Sac Marin et est un lieu incontournable pour les amoureux de la nature. En plus d'être un spot pour les activités de kayak et de randonnée, la plage est un paradis pour l'observation de la faune et de la flore locales. Elle abrite aussi un écosystème unique qui mérite d'être découvert." 
+    },
+    { 
+        name: "Rivière ecrevisse", 
+        lat: 16.1789802, 
+        lng: -61.6906716, 
+        description: "Rivière idéale pour les amateurs de nature. Sur l'île de la Basse-Terre, cette rivière est un petit bijou naturel. Elle est entourée de végétation luxuriante et d'une biodiversité impressionnante, ce qui en fait un lieu idéal pour les excursions et les randonnées. La rivière est également propice à l'exploration en kayak pour ceux qui cherchent à vivre une aventure authentique au cœur de la nature." 
+    },
+    { 
+        name: "Rivière du Matouba", 
+        lat: 16.0460029, 
+        lng: -61.6906716, 
+        description: "Rivière cachée au cœur de la forêt tropicale. La Rivière du Matouba est célèbre pour ses cascades et ses bassins naturels où les visiteurs peuvent se baigner dans des eaux cristallines. Un endroit parfait pour les amoureux de la nature et de l'aventure." 
+    },
+    { 
+        name: "Rivière des Guilles", 
+        lat: 16.086671, 
+        lng: -61.679054, 
+        description: "Rivière magnifique située sur la Basse-Terre. Elle est connue pour ses paysages à couper le souffle et ses zones idéales pour les randonnées. Les visiteurs peuvent y explorer les cascades et se baigner dans ses eaux fraîches et purifiantes." 
+    },
+    { 
+        name: "Rivière de la Rosière", 
+        lat: 16.102168, 
+        lng: -61.733775, 
+        description: "Rivière tranquille idéale pour des excursions à pied. Elle serpente à travers la forêt tropicale et offre un environnement calme et reposant, parfait pour une immersion dans la nature." 
+    }
+];
+        // Marquer les plages sur la carte
+        plages.forEach(function(plage) {
+            L.marker([plage.lat, plage.lng]).addTo(map)
+                .bindPopup("<div class='popup-content'><span class='popup-title'>" + plage.name + "</span><br>" + plage.description + "</div>")
+                .openPopup();
+        });
+
+        // Marquer les rivières sur la carte
+        rivières.forEach(function(riviere) {
+            L.marker([riviere.lat, riviere.lng]).addTo(map)
+                .bindPopup("<div class='popup-content'><span class='popup-title'>" + riviere.name + "</span><br>" + riviere.description + "</div>")
+                .openPopup();
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<html>
+
+	<head> 
+		<meta charset="utf-8">
+        <title>Margaret Hamilton et Apollo 11/Quizz</title>
+        <link rel="stylesheet" href="style.css"> 
+
+        <script language="JavaScript"> 
+
+			
+			var rep = new Array;  // 
+			var faite = new Array;  // 
+			var score = 0;  // 
+ 
+			// 
+			rep[1] = "b";
+			rep[2] = "c";
+			rep[3] = "a";
+			rep[4] = "d";
+			rep[5] = "b";
+			rep[6] = "c";
+			rep[7] = "a";
+
+ 
+// 
+//
+//   
+function test(question, reponse) {
+
+    if (reponse != rep[question]) {
+        if (!faite[question]) {  // 
+            faite[question] = -1;  // 
+            alert("Raté !   C'était la ." + rep[question] + " ");
+            }
+        else {
+            alert("Cette question à déjà été répondue.");
+            }           
+        }
+    else {
+        if (!faite[question]) {
+            faite[question] = -1; 
+            score++; //
+            alert("Bien joué ! C'est la bonne réponse ! ");
+            }
+        else { 
+            alert("Cette question à déjà été répondue.");
+            }
+        }
+}
+
+//
+
+function afficherLesResultats () 
+{
+
+	resultats=document.getElementById("resultats"); 
+	// 
+	// 
+		if (score ==7){resultats.innerHTML="<h1>Ton score est de : 7/7 </h1>"}
+		else if (score ==6){resultats.innerHTML="<h1>Ton score est de : 6/7 </h1>"}
+		else if (score ==5){resultats.innerHTML="<h1>Ton score est de : 5/7 </h1>"}
+		else if (score ==4){resultats.innerHTML="<h1>Ton score est de : 4/7 </h1>"}
+		else if (score ==3){resultats.innerHTML="<h1>Ton score est de : 3/7 </h1>"}
+		else if (score ==2){resultats.innerHTML="<h1>Ton score est de : 2/7 </h1>"}
+		else if (score ==1){resultats.innerHTML="<h1>Ton score est de : 1/7 </h1>"}
+		else if (score ==0){resultats.innerHTML="<h1>Ton score est de : 0/7 </h1>"}
+
+
+    appreciation=document.getElementById("appreciation");
+	//
+	// 
+   		if (score ==7) {appreciation.innerHTML="<h2>Un score parfait !! Bien joué !</h2>"}
+		else if (score > 4 && score <= 6) {appreciation.innerHTML="<h2>Bon score ! Pas loin de la perfection...</h2>"}
+		else if (score >= 2 && score <4) {appreciation.innerHTML="<h2>Mouais...Peut mieux faire</h2>"}
+		else if (score < 2) {appreciation.innerHTML="<h2>Oualala, il faudrait peut-être penser à relire l'histoire :)</h2>"}
+
+
+	// 
+	faite = new Array;
+	score = 0;
+	document.quest.reset();
+}
+
+</script>
+	</head>
+
+    <body> 
+        <div class="bloc_page">
+
+        	
+
+			<header> 
+				<div id="titre_principal">
+					<img src="images/jupiter.gif"id=jupiter alt="Jupiter"/>
+					<h1> Margaret Hamilton et Apollo 11 </h1>					
+				</div>
+
+				<div>
+					<ul>
+						<li><a href="histoire.html">Son histoire</a></li>
+						<li><a href="quizz.html">Quizz</a></li>
+					</ul>
+				</div>
+			</header>
+
+			
+
+			<section id ="quizz"> 
+
+			<form name="quest">
+
+			<h1>Faissons un petit quizz pour voir si vous avez bien tout suivi :)</h1>
+			</br>
+
+			<!--  -->
+			<div class=bloc_question> <!-- -->
+				<h2>1 ➜ En quelle année a été envoyé le 1er homme sur la Lune ?</h2> <!--  -->
+				<p>
+				<!-- -->
+					<br><input type="radio" name="1" value="a" onclick="test(1, this.value)">a.1979
+					<br><input type="radio" name="1" value="b" onclick="test(1, this.value)">b.1969 
+					<br><input type="radio" name="1" value="c" onclick="test(1, this.value)">c.1989
+					<br><input type="radio" name="1" value="d" onclick="test(1, this.value)">d.1976
+				</p>
+			</div>
+			</br></br> <!--  -->
+
+			<div class=bloc_question>
+				<h2>2 ➜ De quelle équipe Margaret Hamilton est-elle responsable dans le cadre de la mission Apollo 11 ?</h2>
+				<p>
+					<br><input type="radio" name="2" value="a" onclick="test(2, this.value)">a.Equipe de développement de tous les logiciels de la mission 
+					<br><input type="radio" name="2" value="b" onclick="test(2, this.value)">b.Equipe de conception de la fusée 
+					<br><input type="radio" name="2" value="c" onclick="test(2, this.value)">c.Equipe de développement de tous les logiciels embarqués dans la fusée 
+					<br><input type="radio" name="2" value="d" onclick="test(2, this.value)">d.Equipe de gestion informatique de la fusée 
+				</p>
+			</div>
+			</br></br>
+
+			<div class=bloc_question>
+				<h2>3 ➜ Grace à qui en est-elle venu à inventer son système de prioritarisassions des taches ?</h2>
+				<p>
+					<br><input type="radio" name="3" value="a" onclick="test(3, this.value)">a.Grace à sa fille 
+					<br><input type="radio" name="3" value="b" onclick="test(3, this.value)">b.Grace à un collègue 
+					<br><input type="radio" name="3" value="c" onclick="test(3, this.value)">c.Grace à une intuition 
+					<br><input type="radio" name="3" value="d" onclick="test(3, this.value)">d.Grace à son patron
+				</p>
+			</div>
+			</br></br>
+
+			<div class=bloc_question>
+				<h2>4 ➜ Comment un ordinateur priorise-il les taches ?</h2>
+				<p>
+					<br><input type="radio" name="4" value="a" onclick="test(4, this.value)">a.Il arrête toutes les taches qu’il est en train d’effectuer 
+					<br><input type="radio" name="4" value="b" onclick="test(4, this.value)">b.Il ne continue que les taches qu’il est en train de faire et annule les suivantes 
+					<br><input type="radio" name="4" value="c" onclick="test(4, this.value)">c.Il exécute les taches les moins importante en priorité et interrompt les plus importantes 
+					<br><input type="radio" name="4" value="d" onclick="test(4, this.value)">d.Il exécute les taches les plus importante en priorité et interrompt les moins importantes 
+				</p>
+			</div>
+			</br></br>
+
+			<div class=bloc_question>
+				<h2>5 ➜ Quel est la cause de la surcharge des ordinateurs lors de la mission Apollo 11 ?</h2>
+				<p>
+					<br><input type="radio" name="5" value="a" onclick="test(5, this.value)">a.Une mauvaise manipulation de la part d’un astronaute 
+					<br><input type="radio" name="5" value="b" onclick="test(5, this.value)">b.Un radar défectueux 
+					<br><input type="radio" name="5" value="c" onclick="test(5, this.value)">c.Un capteur défectueux 
+					<br><input type="radio" name="5" value="d" onclick="test(5, this.value)">d.Un moteur défectueux 
+				</p>
+			</div>
+			</br></br>
+
+			<div class=bloc_question>
+				<h2>6 ➜ Quel message affiche alors l’ordinateur ? </h2>
+				<p>
+					<br><input type="radio" name="6" value="a" onclick="test(6, this.value)">a.P01
+					<br><input type="radio" name="6" value="b" onclick="test(6, this.value)">b.Aucun message ne s’est affiché 
+					<br><input type="radio" name="6" value="c" onclick="test(6, this.value)">c.J’ai trop de tâches à effectuer par rapport à ce que je suis en me sure de réaliser et je vais continuer en n'effectuant que les tâches les plus importantes
+					<br><input type="radio" name="6" value="d" onclick="test(6, this.value)">d.404 error 
+				</p>
+			</div>
+			</br></br>
+
+			<div class=bloc_question>
+				<h2>7 ➜En quel année Margaret Hamilton reçoit-elle la médaille présidentielle de la liberté ? </h2>
+				<p>
+					<br><input type="radio" name="7" value="a" onclick="test(7, this.value)">a.2016
+					<br><input type="radio" name="7" value="b" onclick="test(7, this.value)">b.2015
+					<br><input type="radio" name="7" value="c" onclick="test(7, this.value)">c.2003
+					<br><input type="radio" name="7" value="d" onclick="test(7, this.value)">d.Elle ne l’a jamais reçu 
+				</p>
+			</div>
+			</br></br>
+
+
+			<p><input type="button" name="Resultats" value="Résultats" id="bouton_resultats" onclick="afficherLesResultats()"></p> <!---->
+
+			<div id="resultats"></div> <!--  -->
+			<div id="appreciation"></div> <!---->
+			</br>
+			</form>
+
+			<div class="bouton_fin"> <!--  -->
+  				<p>
+   					<a href="histoire.html">Retour à la page principale</a>
+ 				</p>
+			</div>
+		</section>
+
+		<!--  -->
+
+		<footer> <!--  -->
+			<p>
+				Site web par Menu Pauline 1ère G4. Le mot de <a href="images/xan.jpg" class ="xan" alt="Xan" title="C'est mon chaton !">Xan</a> : cg f   fwq w q lzklkz;,n,,dnnvc
+			</p>
+		</footer>
+
+		</div>
+    </body>
+</html>
+

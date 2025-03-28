@@ -1,0 +1,195 @@
+<!--16/20 Beau travail perfectible (on arrive sur la page sans savoir quoi faire, c'est plages ou  rivières, vous auriez pû y ajouter des images
+de l'audio description etc.). Je ne comprends pas les messages des bulles !!!-->
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description"
+    content="Explore the stunning beaches and rivers of Guadeloupe with an interactive map. Discover the best outdoor locations to visit.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" type="text/css" href="1style.css">
+  <title>Les plages et les rivières de Guadeloupe</title>
+</head>
+
+<body>
+  <div class="bloc_page">
+    <nav class="nav-bar">
+      <div class="nav-bar-img">
+        <img src="incarnation/avatar.png" alt="Avatar">
+        <h1>Guadeloupe</h1>
+      </div>
+      <div class="nav-bar-liens">
+        <ul>
+          <li><a href="\\w050335\- PROJET SITE WEB\James Singarin FALEME\Singarin\Gwada.html">HOME-QUIZ</a></li>
+          <li><a href="\\w050335\- PROJET SITE WEB\James Singarin FALEME\James\1index.html">ACTIVITE</a></li>
+          <li><a href="\\w050335\- PROJET SITE WEB\James Singarin FALEME\FALEME\new one\Biographie.html">PLAGE-RIVIERE</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Carte -->
+    <div id="mapid" style="height: 700px;"></div>
+
+    <div id="imageContainer" style="display: flex">
+      <img src="" alt="Quiz" id="image" />
+      <p id="ajout"><img src="" alt="">Où est-ce que ça se situe ?</p>
+      <div id="clickPosition"></div>
+    </div>
+
+    <!-- Pop-up -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <p id="popup-message"></p>
+        <button onclick="closePopup()">Fermer</button>
+      </div>
+    </div>
+
+    <div id="scoreTable" style="display: none;">
+      <h2>Tableau des Scores</h2>
+      <table id="scoreTableContent">
+        <thead>
+          <tr>
+            <th>Joueur</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Les scores seront ajoutés ici -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  </div>
+
+  <script>
+    // Initialisation de la carte
+    var map = L.map('mapid').setView([16.2565527, -61.5720067], 10); // Coordonnées centrées sur la Guadeloupe
+  
+    // Carte de fond
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+  
+    // Tableau des questions avec coordonnées géographiques
+    var questions = [
+      { image: 'incarnation/petithavre.jpg', question: 'Où se situe la plage des Petits Havre ?', lat: 16.2034649, lon: -61.4257038 },
+      { image: 'incarnation/Datcha.jpg', question: 'Où se situe la plage de la Datcha ?', lat: 16.204926, lon: -61.4960347 },
+      { image: 'incarnation/caravelle.jpg', question: 'Où se situe la plage de la Carvelle ?', lat: 16.2177451, lon: -61.3957747 },
+      { image: 'incarnation/Lézarde.jpg', question: 'Où se situe la rivière des Lézarde ?', lat: 16.1839144, lon: -61.6254074 },
+      { image: 'incarnation/Anse_Bertrand.jpg', question: 'Où se situe la plage de Anse Bertrand ?', lat: 16.4715327, lon: -61.5143153 },
+      { image: 'incarnation/père.jpg', question: 'Où se situe la rivière des Père ?', lat: 16.0109852, lon: -61.7402884 },
+      { image: 'incarnation/Soufrière.jpg', question: 'Où se situe la rivière de la Soufrière ?', lat: 16.0430269, lon: -61.6631457 },
+      { image: 'incarnation/Sainte_Anne.jpg', question: 'Où se situe la plage de Sainte-Anne ?', lat: 16.2221875, lon: -61.3817408 },
+      { image: 'incarnation/raisins.jpg', question: 'Où se situe la plage des Raisins Clairs ?', lat: 16.2498433, lon: -61.2673955 },
+      { image: 'incarnation/CreoleBeach.jpg', question: 'Où se situe la Créole Beach ?', lat: 16.2061981, lon: -61.5065594 },
+      { image: 'incarnation/goyave.jpg', question: 'Où se situe la Grande Rivière Goyaves ?', lat: 16.2993780, lon: -61.6075077 },
+      { image: 'incarnation/ecrevisse.jpg', question: 'Où se situe la Rivière aux Écrevisses ?', lat: 16.1787326, lon: -61.6809288 },
+      { image: 'incarnation/Salée.jpg', question: 'Où se situe la Rivière Salée ?', lat: 16.2660581, lon: -61.5479720 },
+      { image: 'incarnation/habitant.jpg', question: 'Où se situe la Grande Rivière des Vieux Habitant ?', lat: 16.0835888, lon: -61.7262544 }
+    ];
+  
+    // Score global
+    var score = 0;
+    var answeredQuestions = 0; // Suivi des questions auxquelles on a répondu
+  
+    // Fonction pour mélanger un tableau
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Échange les éléments
+      }
+    }
+  
+    // Mélange le tableau de questions
+    shuffle(questions);
+  
+    // Sélectionne une question aléatoire
+    var num_question = 0;
+  
+    // Fonction pour afficher le pop-up
+    function showPopup(message) {
+      document.getElementById('popup-message').textContent = message;
+      document.getElementById('popup').style.display = 'flex'; // Utilisation de flex pour centrer
+    }
+  
+    // Fonction pour fermer le pop-up
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  
+    // Mise à jour de la question et de l'image
+    function updateQuestion() {
+      if (num_question < questions.length) {
+        document.getElementById('ajout').innerHTML = `<img src="${questions[num_question].image}" id="image"> ${questions[num_question].question}`;
+      } else {
+        // Afficher le pop-up de fin avec le score
+        showPopup("Félicitations! Vous avez terminé le jeu! Votre score final est : " + score + "/" + questions.length);
+        showScoreTable(); // Afficher le tableau des scores (si tu veux garder ce tableau aussi)
+      }
+    }
+  
+    // Afficher le tableau des scores
+    function showScoreTable() {
+      document.getElementById('scoreTable').style.display = 'block';
+      var tableBody = document.getElementById('scoreTableContent').getElementsByTagName('tbody')[0];
+  
+      var row = tableBody.insertRow();
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+  
+      cell1.textContent = "Joueur 1"; // Nom du joueur (peut être dynamique si tu veux)
+      cell2.textContent = score; // Score du joueur
+    }
+  
+    document.addEventListener('DOMContentLoaded', function () {
+      var imageContainer = document.getElementById('imageContainer');
+  
+      // Initialiser la première question
+      updateQuestion();
+  
+      // Ajouter un marqueur pour chaque question sur la carte
+      questions.forEach(function (q) {
+        L.marker([q.lat, q.lon]).addTo(map).bindPopup(q.question);
+      });
+  
+      // Vérifier la réponse sur la carte
+      map.on('click', function (e) {
+        if (answeredQuestions >= questions.length) return; // Limite les réponses à une par question
+  
+        var lat = e.latlng.lat;
+        var lon = e.latlng.lng;
+  
+        // Vérification si le clic est proche de la réponse correcte
+        var correctLat = questions[num_question].lat;
+        var correctLon = questions[num_question].lon;
+  
+        var distance = Math.sqrt(Math.pow(lat - correctLat, 2) + Math.pow(lon - correctLon, 2));
+  
+        if (distance < 0.05) { // Tolérance pour la bonne réponse
+          score++; // Incrémenter le score
+          showPopup("Woulo! Bonne réponse !");
+        } else {
+          showPopup("Mauvaise réponse !");
+        }
+  
+        answeredQuestions++;
+  
+        // Attendre un délai avant de changer la question et l'image
+        setTimeout(function() {
+          num_question++; // Passer à la question suivante
+          updateQuestion(); // Met à jour la question et l'image
+          closePopup(); // Fermer le pop-up après un délai
+        }, 1500); // Délai de 1,5 seconde pour voir le pop-up avant de changer la question
+      });
+    });
+  </script>
+</body>
+
+</html>

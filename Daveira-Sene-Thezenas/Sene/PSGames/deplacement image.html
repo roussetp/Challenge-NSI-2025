@@ -1,0 +1,57 @@
+<body>
+  <p>xwcwcwcxw</p>
+  <!-- L'image que nous allons déplacer -->
+  <p><img src="Hernandez.png" id="imageHERNANDEZ" alt="Image à déplacer" class="draggable"></p>
+  <p>xwcwcwcxw</p>
+  <p><img src="patcho.png" id="imagePATCHO" alt="Image à déplacer" class="draggable"></p>
+
+  <script>
+    // Récupérer toutes les images avec la classe 'draggable'
+    const images = document.querySelectorAll('.draggable');
+
+    // Variables pour la position initiale de la souris et de l'image
+    let offsetX = 0, offsetY = 0;
+    let isDragging = false;
+    let currentImage = null; // Image actuellement en cours de déplacement
+
+    // Fonction pour commencer à déplacer l'image lorsque la souris est enfoncée
+    images.forEach(image => {
+      image.addEventListener('mousedown', function (event) {
+        isDragging = true;
+        currentImage = image; // Stocker l'image actuellement sélectionnée
+
+        // Calculer l'offset entre la position de la souris et l'image
+        offsetX = event.clientX - currentImage.getBoundingClientRect().left;
+        offsetY = event.clientY - currentImage.getBoundingClientRect().top;
+        
+
+        // Désactiver la sélection de texte pendant le drag
+        document.body.style.userSelect = 'none';
+      });
+    });
+
+    // Fonction pour déplacer l'image pendant que la souris bouge
+    document.addEventListener('mousemove', function (event) {
+      if (isDragging && currentImage) {
+        // Calculer la nouvelle position
+        const x = event.clientX - offsetX;
+        const y = event.clientY - offsetY;
+
+        // Appliquer la nouvelle position à l'image
+        currentImage.style.position = 'absolute';
+        currentImage.style.left = `${x}px`;
+        currentImage.style.top = `${y}px`;
+        alert(currentImage.style.top)
+      }
+    });
+
+    // Fonction pour arrêter de déplacer l'image lorsque la souris est relâchée
+    document.addEventListener('mouseup', function () {
+      isDragging = false;
+      currentImage = null; // Réinitialiser l'image en cours de déplacement
+
+      // Réactiver la sélection de texte
+      document.body.style.userSelect = 'auto';
+    });
+  </script>
+</body>

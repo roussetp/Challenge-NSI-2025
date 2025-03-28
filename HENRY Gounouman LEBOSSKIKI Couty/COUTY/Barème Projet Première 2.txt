@@ -1,0 +1,11 @@
+Barème production
+<!--
+/4 pts autonomie et implication
+/3 pts pertinence du contenu de la page Web
+/4 pts richesse du contenu HTML
+/4 pts richesse du code CSS
+/4 pts richesse du JavaScript
+/1 pt site Web constitué et opérationnel
+/20
+-->
+

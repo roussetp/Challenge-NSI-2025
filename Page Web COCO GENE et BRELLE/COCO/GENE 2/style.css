@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(70905-palmiers_sur_la_plage_pendant_la_journee-1920x1080.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+audio {
+  align-items: baseline;
+  color: #00BFFF;
+  
+}
+#game-container {
+  text-align: center;
+}
+
+canvas {
+  background-color: #00BFFF;
+  border: 2px solid #fff;
+}
+
+#score {
+  margin-top: 10px;
+}
+
+#game-over {
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+}

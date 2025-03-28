@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.nav-bar h1 {
+    color: rgb(62, 224, 30);
+    margin: 0;
+    flex: 1;
+    text-align: left;
+}
+.nav-bar-img h1{
+    margin: auto;
+    padding-left: 1.5rem;
+  }
+.nav-bar p {
+    color: rgb(62, 224, 30);
+    margin: 0;
+    text-align: left;
+}
+.nav-bar-img {
+    display: flex;
+    margin: auto;
+    margin-left: 15px;
+    width: 65px;
+    height: 65px;
+    animation: fadeInImage 1s ease-out forwards;
+}
+
+@keyframes fadeInImage {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.nav-bar-liens {
+    margin-left: auto;
+}
+
+
+h1 {
+    margin: 0;
+}
+
+#mapid {
+    height: 500px;
+    width: 100%;
+}
+
+.section {
+    padding: 20px;
+    text-align: center;
+}
+
+
+.popup-content {
+    font-size: 14px;
+}
+
+.popup-title {
+    font-weight: bold;
+}
+.nav-bar {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+  .nav-bar-liens {
+    margin-left: auto;
+    animation: fadeInImages 2s ease-out forwards;
+}
+
+.nav-bar-liens ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-bar-liens li {
+    margin-left: 20px;
+}
+
+.nav-bar-liens li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-bar-liens li a:hover {
+    color: #42e920;
+}
+
+ footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 20px; /* More padding for readability */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

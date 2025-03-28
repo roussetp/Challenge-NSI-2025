@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Quizz sur le PSG</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1, h2, p {
+            color: white; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+    <script language="JavaScript">
+        var rep = new Array;
+        var faite = new Array;
+        var score = 0;
+
+        rep[1] = "b";
+        rep[2] = "b";
+        rep[3] = "a";
+        rep[4] = "c";
+        rep[5] = "b";
+        rep[6] = "c";
+        rep[7] = "a";
+        rep[8] = "c";
+        rep[9] = "d";
+        rep[10] = "b";
+
+        function test(question, reponse) {
+            if (reponse != rep[question]) {
+                if (!faite[question]) {
+                    faite[question] = -1;
+                    alert("Perdu !   C'était la " + rep[question] + " ");
+                } else {
+                    alert("Tu as déjà répondu à la question !.");
+                }
+            } else {
+                if (!faite[question]) {
+                    faite[question] = -1;
+                    score++;
+                    alert("Bien joué! C'est la bonne réponse !");
+                } else {
+                    alert("Tu as déjà répondu à la question !");
+                }
+            }
+        }
+
+        function afficherLesResultats() {
+            resultats = document.getElementById("resultats");
+            appreciation = document.getElementById("appreciation");
+
+          
+            resultats.innerHTML = "<h1>Ton score est de : " + score + "/10</h1>";
+
+            if (score == 10) {
+                appreciation.innerHTML = "<h2>0 faute ! T'es un vrai fan du PSG toi !</h2>";
+            } else if (score >= 7) {
+                appreciation.innerHTML = "<h2>Pas mal du tout, t'es pas loin de l'excellence !!</h2>";
+            } else if (score >= 4) {
+                appreciation.innerHTML = "<h2>J'pense que relire l'histoire te ferai du bien</h2>";
+            } else {
+                appreciation.innerHTML = "<h2>Oualala, t'es marseillais ou quoi ! !</h2>";
+            }
+
+            faite = new Array;
+            score = 0;
+            document.quest.reset();
+        }
+    </script>
+</head>
+
+<body style="color:white;">
+    <div class="bloc_page">
+
+        <header>
+            <ul>
+                <li><a href="../Daveira/Histoire du psg.html">Histoire et infos</a></li>
+            </ul>
+        </header>
+
+        <section id="quizz">
+
+            <form name="quest">
+                <h1>Faisons un petit quizz pour voir si vous avez bien tout suivi !</h1>
+                </br>
+
+                <!-- Question 1 -->
+                <div class="bloc_question">
+                    <h2>1 ➜ Quel est la légende qui a porté le numéro 10 du PSG </h2>
+                    <p>
+                        <br><input type="radio" name="1" value="a" onclick="test(1, this.value)">a. Kylian Mbappé
+                        <br><input type="radio" name="1" value="b" onclick="test(1, this.value)">b. Neymar Jr
+                        <br><input type="radio" name="1" value="c" onclick="test(1, this.value)">c. Lionel Messi
+                        <br><input type="radio" name="1" value="d" onclick="test(1, this.value)">d. Edinson Cavani
+                    </p>
+                </div>
+                </br></br>
+
+                <!-- Question 2 -->
+                <div class="bloc_question">
+                    <h2>2 ➜ En quelle année le PSG a été fondé ?</h2>
+                    <p>
+                        <br><input type="radio" name="2" value="a" onclick="test(2, this.value)">a. 1930
+                        <br><input type="radio" name="2" value="b" onclick="test(2, this.value)">b. 1970
+                        <br><input type="radio" name="2" value="c" onclick="test(2, this.value)">c. 1950
+                        <br><input type="radio" name="2" value="d" onclick="test(2, this.value)">d. 1850
+                    </p>
+                </div>
+                </br></br>
+
+                <!-- Question 3 -->
+                <div class="bloc_question">
+                    <h2>3 ➜ Qui est le numéro 10 actuel du PSG ?</h2>
+                    <p>
+                        <br><input type="radio" name="3" value="a" onclick="test(3, this.value)">a  Ousmane Dembélé
+                        <br><input type="radio" name="3" value="b" onclick="test(3, this.value)">b Bradley Barcola
+                        <br><input type="radio" name="3" value="c" onclick="test(3, this.value)">c  Vitinha
+                        <br><input type="radio" name="3" value="d" onclick="test(3, this.value)">d  Désiré Doué
+                    </p>
+                </div>
+                </br></br>
+
+                <!-- Question 4 -->
+                <div class="bloc_question">
+                    <h2>4 ➜ En quelle année le Qatar a racheté le PSG ?</h2>
+                    <p>
+                        <br><input type="radio" name="4" value="a" onclick="test(4, this.value)">a. 2001
+                        <br><input type="radio" name="4" value="b" onclick="test(4, this.value)">b. 2015
+                        <br><input type="radio" name="4" value="c" onclick="test(4, this.value)">c. 2011
+                        <br><input type="radio" name="4" value="d" onclick="test(4, this.value)">d. 2005
+                    </p>
+                </div>
+                </br></br>
+
+                <!-- Question 5 -->
+                <div class="bloc_question">
+                    <h2>5 ➜ Quelle est l'équipe contre laquelle le PSG vient de se qualifier en Ligue des champions ?</h2>
+                    <p>
+                        <br><input type="radio" name="5" value="a" onclick="test(5, this.value)">a. FC Barcelone
+                        <br><input type="radio" name="5" value="b" onclick="test(5, this.value)">b. Liverpool
+                        <br><input type="radio" name="5" value="c" onclick="test(5, this.value)">c. Real Madrid
+                        <br><input type="radio" name="5" value="d" onclick="test(5, this.value)">d. Atletico Madrid
+                    </p>
+                </div>
+                </br></br>
+
+                <!-- Question 6 -->
+                <div class="bloc_question">
+                    <h2>6 ➜ Combien de Ligue 1 le PSG a-t-il gagné ?</h2>
+                    <p>
+                        <br><input type="radio" name="6" value="a" onclick="test(6, this.value)">a. 10
+                        <br><input type="radio" name="6" value="b" onclick="test(6, this.value)">b. 15
+                        <br><input type="radio" name="6" value="c" onclick="test(6, this.value)">c. 12
+                        <br><input type="radio" name="6" value="d" onclick="test(6, this.value)">d. 8
+                    </p>
+                </div>
+                </br></br>
+
+                <!-- Question 7 -->
+                <div class="bloc_question">
+                    <h2>7 ➜ Quelle est la compétition que le PSG n'a jamais gagné ?</h2>
+                    <p>
+                        <br><input type="radio" name="7" value="a" onclick="test(7, this.value)">a. Ligue des champions
+                        <br><input type="radio" name="7" value="b" onclick="test(7, this.value)">b. Ligue 1
+                        <br><input type="radio" name="7" value="c" onclick="test(7, this.value)">c. Europa League
+                        <br><input type="radio" name="7" value="d" onclick="test(7, this.value)">d. Coupe de France
+                    </p>
+                </div>
+                </br></br>
+
+                <!-- Question 8 -->
+                <div class="bloc_question">
+                    <h2>8 ➜ Qui est l'entraîneur actuel du PSG ?</h2>
+                    <p>
+                        <br><input type="radio" name="8" value="a" onclick="test(8, this.value)">a. Laurent Blanc
+                        <br><input type="radio" name="8" value="b" onclick="test(8, this.value)">b. Pep Guardiola
+                        <br><input type="radio" name="8" value="c" onclick="test(8, this.value)">c. Luis Enrique
+                        <br><input type="radio" name="8" value="d" onclick="test(8, this.value)">d. Christophe Galtier
+                    </p>
+                </div>
+                </br></br>
+
+                <!-- Question 9 -->
+                <div class="bloc_question">
+                    <h2>9 ➜ Quel est le meilleur buteur du monde qui joue actuellement au PSG ?</h2>
+                    <p>
+                        <br><input type="radio" name="9" value="a" onclick="test(9, this.value)">a. Bradley Barcola
+                        <br><input type="radio" name="9" value="b" onclick="test(9, this.value)">b. Kylian Mbappé
+                        <br><input type="radio" name="9" value="c" onclick="test(9, this.value)">c. Khvicha Kvaratskhelia
+                        <br><input type="radio" name="9" value="d" onclick="test(9, this.value)">d. Ousmane Dembélé
+                    </p>
+                </div>
+                </br></br>
+
+                <!-- Question 10 -->
+                <div class="bloc_question">
+                    <h2>10 ➜ Qui est le capitaine de l'équipe du PSG ?</h2>
+                    <p>
+                        <br><input type="radio" name="10" value="a" onclick="test(10, this.value)">a. Ousmane Dembélé
+                        <br><input type="radio" name="10" value="b" onclick="test(10, this.value)">b. Marquinhos
+                        <br><input type="radio" name="10" value="c" onclick="test(10, this.value)">c. Vitinha
+                        <br><input type="radio" name="10" value="d" onclick="test(10, this.value)">d. Kylian Mbappé
+                        <h1><p>Une fois terminé, clique<a href="../Daveira/acceuil PSGame.html"> ici </a> pour retourner a l'aceuil !</p></h1>
+                    </p>
+                </div>
+                </br></br>
+
+                
+                <br><input type="button" value="Voir les résultats" onclick="afficherLesResultats()">
+            </form>
+        </section>
+
+        
+        <section id="resultats"></section>
+        <section id="appreciation"></section>
+    </div>
+</body>
+
+</html>

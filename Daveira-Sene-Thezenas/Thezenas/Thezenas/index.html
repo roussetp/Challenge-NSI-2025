@@ -1,0 +1,364 @@
+<!-- 14/20 beau travail avec un joli jeu de mots mais très tardif. Il faut travailler de manière régulière en classe !-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Les Ligamots-Croisés</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8" />
+    </head>
+    <body>
+        <h1>Les Ligamots-Croisés</h1>
+        <p>Pour résoudre les mots croisés, vous devez suivre quelques règles simples : La grille est constituée de cases blanches et noires. Les cases noires séparent les mots les uns des autres. Chaque case blanche ne peut contenir qu'une seule lettre.</p>
+        <table id="grille">
+            <tr> <!--Ligne 1-->
+              <td></td> <!--Case 1 de la ligne 1-->
+              <td></td>
+              <td>2</td>
+              <td></td>
+              <td></td>
+              <td>3</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr> <!--Ligne 1-->
+                <td></td> <!--Case 1 de la ligne 1-->
+                <td></td>
+                <td class="case" onclick="editCell(this)"></td>
+                <td></td>
+                <td></td>
+                <td class="case" onclick="editCell(this)"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>5</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td></td>
+              <td>6</td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+
+
+
+
+
+
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>7</td>
+
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td> 
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td></td>
+              <td></td>
+              <td>8</td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)">-</td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)">-</td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>4</td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+
+
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="case" onclick="editCell(this)"></td>
+            </tr>
+        </table>
+          <div id="definition">
+            <h2>Définitions :</h2>
+            <p id="definition1">1. Transfet le plus cher de l'histoire du PSG et du football</p>
+            <p id="definition2">2. Seul joueur de l'histoire du PSG a avoir gagné le Ballon d'Or grâce à ses parformances au club </p>
+            <p id="definition3">3. Club rival au PSG</p>
+            <p id="definition4">4. Championnat dans lequel evolue le PSG</p>
+            <p id="definition5">5. Meilleur buteur de l'histoire du club</p>
+            <p id="definition6">6. Joueur le plus capé de l'histoire du PSG</p>
+            <p id="definition7">7. Meilleur passeur de l'histoire du PSG</p>
+            <p id="definition8">8. Nom du stade du PSG</p>
+          </div>
+    </body>
+    <script>
+      // Fonction pour comparer deux tableaux
+      function comparerTableaux(tableau1, tableau2) {
+          if (tableau1.length !== tableau2.length) {
+              return false;
+          }
+          for (var i = 0; i < tableau1.length; i++) {
+            if (tableau1[i].length !== tableau2[i].length) {
+                return false;
+            }
+            for (var j = 0; j < tableau1[i].length; j++) {
+                if (tableau1[i][j] !== tableau2[i][j]) {
+                    return false;
+                }
+            }
+          }
+          return true;
+      }
+    
+      function editCell(cell) {
+        // Créer un champ d'entrée de texte
+        var input = document.createElement("input");
+        input.type = "text";
+        input.maxLength = 1; // Limiter la saisie à une seule lettre
+        input.className = "single-letter-input "; // Ajouter une classe pour le style
+    
+        // Récupérer le contenu actuel de la cellule
+        var currentContent = cell.innerHTML.trim();
+    
+        // Définir la valeur du champ d'entrée de texte comme le contenu actuel de la cellule
+        input.value = currentContent;
+    
+        // Ajouter le champ d'entrée de texte à la cellule
+        cell.innerHTML = "";
+        cell.appendChild(input);
+    
+        // Mettre le focus sur le champ d'entrée de texte
+        input.focus();
+    
+        // Ajouter un gestionnaire d'événements pour détecter la fin de l'édition
+        input.addEventListener("blur", function () {
+            // Valider et mettre à jour le contenu de la cellule avec la valeur du champ d'entrée de texte (en majuscules)
+            var newValue = input.value.toUpperCase();
+            cell.innerHTML = newValue;
+            var grilleCompletee = recupererValeursTableau(); // récupère les valeurs du tableau
+            //console.log(grilleCompletee); // affiche dans la console
+    
+            var grilleSolution = [
+                    ['', '', '2', '', '', '3', '', '','','','','','','','','','','','','','','','','',''],
+                    ['', '', 'W', '', '', 'M', '', '','','5','','','','','','','','','','','','','','',''],
+                    ['1', 'N', 'E', 'Y', 'M', 'A', 'R', '','6','M','A','R','Q','U','I','N','H','O','S','','','','','',''],
+                    ['', '', 'A', '', '', 'R', '', '','','B','','','','','','','','','','','7','','','',''],
+                    ['', '', 'H', '', '', 'S', '', '','','A','','','','','','','','','','','D','','','',''],
+                    ['', '', '', '', '', 'E', '', '','8','P','A','R','C','','D','E','S','','P','R','I','N','C','E','S'],
+                    ['', '', '', '', '', 'I', '', '','','P','','','','','','','','','','','M','','','',''],
+                    ['','','','','4','L','I','G','U','E','1','','','','','','','','','','A','','','',''],
+                    ['','','','','','L','','','','','','','','','','','','','','','R','','','',''],
+                    ['','','','','','E','','','','','','','','','','','','','','','I','','','',''],
+                    ['','','','','','','','','','','','','','','','','','','','','A','','','','']
+                                        ];
+            //alert(grille)
+            //alert(grilleCompletee)
+            if (comparerTableaux(grilleSolution, grilleCompletee)) {
+              alert("Trouvé");
+            }
+        });
+      }
+    
+          // Fonction pour récupérer les valeurs des cellules
+          function recupererValeursTableau() {
+            // Récupérer le tableau par son identifiant
+            var tableau = document.getElementById("grille");
+    
+            // Initialiser un tableau pour stocker les valeurs
+            var valeurs = [];
+    
+            // Parcourir les lignes du tableau
+            for (var i = 0; i < tableau.rows.length; i++) {
+                // Initialiser un tableau pour stocker les valeurs de la ligne actuelle
+                var valeursLigne = [];
+    
+                // Parcourir les cellules de la ligne actuelle
+                for (var j = 0; j < tableau.rows[i].cells.length; j++) {
+                    // Ajouter la valeur de la cellule au tableau
+                    valeursLigne.push(tableau.rows[i].cells[j].innerHTML);
+                }
+    
+                // Ajouter le tableau de valeurs de la ligne au tableau principal
+                valeurs.push(valeursLigne);
+            }
+    
+            return valeurs;
+        }
+    </script>
+</html>

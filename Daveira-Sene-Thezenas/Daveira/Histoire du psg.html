@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> PSGame</title>  
+        <link rel="shortcut icon" type="image/x-icon" href="PSG-Logo-1.png" />
+        <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8" />
+        <style>
+            body {
+                color: white; 
+                text-align: justify;
+            }
+
+            
+            .audio-button {
+                display: inline-block;
+                padding: 10px 25px;
+                background-color: #e30613; 
+                color: white;
+                border: none;
+                border-radius: 30px;
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+           
+            .audio-button:hover {
+                background-color: #004c8c; 
+            }
+
+            .audio-button:focus {
+                outline: none;
+            }
+        </style>
+    </head>
+    <body>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1>Histoire + Infos sur le PSG</h1> 
+        <br>
+        <br>
+        <br>
+        <section id="intro">
+            <article>
+                <section>
+                    <p id="texte-a-lire">
+                    Le Paris saint germain est un club de football français créé en 1970 donc il fête ses 55 ans cette année, il s’impose rapidement comme un acteur majeur du football français. L’ère des années 90 voit arriver des joueurs comme George Weah ou Ronaldinho.<br><br> Depuis son rachat par le Quatar en 2011 le club domine la Ligue 1 (12 titres) et attire des stars mondiales comme Neymar, Mbappé ou encore Messi mais malgré tout cela le PSG court toujours après sa première Ligue des champions.<br><br>
+                    Le Paris saint germain connait désormais une transformation notable sous la direction de leur entraineur Luis Enrique, qui met l’accent sur la cohésion d’équipe et le développement des jeunes joueurs. Cette stratégie porte ses fruits comme en témoigne leur qualification contre Liverpool en quart de finale de Ligue des champions. <br><br>
+                    Le PSG s’appuie cette saison sur plusieurs joueurs clés qui apportent chacun leur talent et leur leadership à l’équipe avec tout d’abord Ousmane Dembélé qui réalise une saison incroyable il est le joueur le plus décisif d’europe actuellement. Bradley Barcola est juste derrière lui dans ce classement, le jeune français est monté en puissance depuis la saison dernière. 
+                    <br><br>Il y a aussi Vitinha le métronome du milieu de terrain parisien qui brille avec sa vision de jeu et sa qualité de passe. Khvicha Kvaratskhelia la nouvelle star, arrivé en janvier, il s’est déjà imposé en tant que titulaire et brille de part sa qualité de frappe. Et pour finir Marquinhos pilier de la défense et capitaine de l’équipe, c’est le véritable leader du vestiaire. 
+                    <br><br> <ul>
+                        <h1> <p>Quand tu aura finit de lire fais le<a href="../Daveira/quizz derniere version.html"> quizz </a> pour te tester !</p></h1>
+                     </ul></p>
+                     <ul>
+                        <h1><p>Clique<a href="../Daveira/acceuil PSGame.html"> ici </a> pour retourner a l'aceuil !</p></h1>
+                        </ul>
+                </section>
+            </article>
+        </section>
+
+        
+        <button class="audio-button" onclick="lireTexte()">Lire le texte</button>
+
+        <script>
+            function lireTexte() {
+                var texte = document.getElementById("texte-a-lire").innerText;
+                var syntheseVocale = new SpeechSynthesisUtterance(texte);
+                syntheseVocale.lang = "fr-FR"; 
+                window.speechSynthesis.speak(syntheseVocale);
+            }
+        </script>
+    </body>
+</html>

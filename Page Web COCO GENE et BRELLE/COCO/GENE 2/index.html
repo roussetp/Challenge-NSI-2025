@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course de Bateaux aux Maldives</title>
+  <link rel="stylesheet" href="style.css">
+  <audio autoplay loop>
+    <source src="Bruit des vagues sur la plage, Pt. 01.mp3" type="Bruit de la mer">
+    
+</audio>
+</head>
+<body>
+  <audio controls src="Bruit des vagues sur la plage, Pt. 01.mp3"></audio>
+            <a href="Bruit des vagues sur la plage, Pt. 01.mp3"> Download audio </a>
+          </figure>
+  <div id="game-container">
+    <h1>Course de Bateaux Traditionnels aux Maldives</h1>
+    <canvas id="gameCanvas"></canvas>
+    <div id="score">
+      <p>Temps : <span id="timer">0</span> secondes</p>
+      <p>Vitesse : <span id="speed">0</span> km/h</p>
+    </div>
+    <div id="game-over" class="hidden">
+      <h2>Jeu Terminé!</h2>
+      <p>Votre temps : <span id="final-time"></span> secondes</p>
+      <button onclick="restartGame()">Rejouer</button>
+      <p>
+        <a href="../COCO/index.html">Retour à la page principale</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

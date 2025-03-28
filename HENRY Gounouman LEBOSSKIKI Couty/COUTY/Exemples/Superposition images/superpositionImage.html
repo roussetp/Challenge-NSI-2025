@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Styles pour le conteneur parent et les images restent inchangés */
+    .image-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    #image1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #image2 {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      width: 50%;
+      height: 50%;
+      opacity: 1; /* Opacité initiale à 100% (complètement opaque) */
+      transition: opacity 0.5s ease-in-out; /* Ajout d'une transition pour une animation en douceur */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-container">
+    <img id="image1" src="image1.jpg" alt="Image 1">
+    <img id="image2" src="image2.png" alt="Image 2">
+  </div>
+
+  <script>
+    // Récupérer l'élément de l'image 2
+    var image2 = document.getElementById('image2');
+
+    // Variable pour suivre l'état actuel (visible ou invisible)
+    var isVisible = true;
+
+    // Fonction pour alterner l'opacité de l'image 2
+    function toggleImage() {
+      if (isVisible) {
+        image2.style.opacity = 0; // Image transparente
+      } else {
+        image2.style.opacity = 1; // Image opaque
+      }
+      isVisible = !isVisible; // Inverser l'état
+    }
+
+    // Définir l'intervalle de clignotement (par exemple, toutes les 500 millisecondes)
+    var intervalId = setInterval(toggleImage, 500);
+
+    // Arrêter le clignotement après un certain temps (par exemple, après 3000 millisecondes)
+    setTimeout(function () {
+      clearInterval(intervalId); // Arrêter l'intervalle
+      image2.style.opacity = 1; // Assurer que l'image est complètement opaque à la fin
+    }, 3000);
+  </script>
+
+</body>
+</html>
